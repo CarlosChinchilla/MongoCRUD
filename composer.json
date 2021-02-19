@@ -1,0 +1,7 @@
+{
+    "require": {
+        "mongodb/mongodb": "^1.8",
+        "myclabs/php-enum": "^1.7",
+        "ext-mongodb": "*"
+    }
+}

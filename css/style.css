@@ -1,0 +1,365 @@
+@charset "utf-8";
+
+@media only screen and (min-width: 960px) {
+
+    #movMenu{
+        display:none;
+    }
+
+    #navegadorMain{
+
+        display: flex !important;
+
+    }
+
+}
+
+@media only screen and (max-width: 960px) {
+
+    /*--------HEADER------------*/
+
+
+    header{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    #userInfo{
+        padding-right: 15px !important;
+    }
+
+    #userInfo span{
+        display: none !important;
+    }
+
+    #iniciarSesion span{
+        display: none !important;
+    }
+
+    #iniciarSesion{
+        padding-right: 15px !important;
+    }
+
+    .avatar{
+        padding: 3px 0 5px 0px !important;
+    }
+
+    .arrow{
+        display: block !important;
+        margin-left: 40px !important;
+    }
+
+    /*-----------MENUS DESPLEGABLE-------------*/
+
+    #navegadorMain, #navegadorUser{
+        display: none;
+        position: absolute;
+        top: 0;
+        flex-direction: column !important;
+        justify-content: center;
+        margin: 0 !important;
+        width: 49%;
+    }
+
+    #navegadorMain{
+        left: 0;
+    }
+
+    #navegadorUser{
+        right: 0;
+    }
+
+    #navegadorMain li, #navegadorUser li{
+        margin: 0 !important;
+        width: 100% !important;
+        height: 60px !important;
+    }
+
+    #navegadorMain li a, #navegadorUser li a{
+        border-radius: 0 !important;
+    }
+
+    #navegadorMain li a img, #navegadorUser li a img{
+        margin-top: 10px;
+    }
+
+    /*------------------------*/
+
+}
+
+*{
+    font-family: Arial, serif;
+    box-sizing: border-box;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+}
+
+html, body{
+    height: 100%;
+    width: 100%;
+    background-color: #3A3A3A;
+    text-align: center;
+}
+
+.container{
+    min-height: 100%;
+}
+
+.main{
+    overflow: auto;
+    padding-bottom: 43px;
+}
+
+/*VENTANA EMERGENTE LOGIN*/
+#modal{
+    display: none;
+    position: fixed;
+    z-index: 120;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.5);
+    padding-top: 60px;
+}
+
+#login{
+
+    background-color: #ffffff;
+    margin: 5px auto;
+    border: 3px solid #FF1D28;
+    width: 25%;
+    min-width: 320px;
+
+}
+
+#cerrrarLogin {
+    position: relative;
+    right: 0;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+/*-----------HEADER-----------*/
+
+header{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 60px;
+    padding: 5px 10px 3px 10px;
+    background: #444444;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+    z-index: 50;
+}
+
+header img{
+    height: 50px;
+    float: left;
+}
+#movMenu{
+    cursor: pointer;
+}
+
+#iniciarSesion{
+    float: right;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    color: #F0F0F0;
+    font-weight: bolder;
+    font-size: 20px;
+    cursor: pointer;
+    padding-right: 50px;
+}
+
+#iniciarSesion span{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#iniciarSesion:hover{
+    color: #FF7300;
+}
+
+#userInfo{
+    float: right;
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+    color: #F0F0F0;
+    font-weight: bolder;
+    font-size: 20px;
+    cursor: pointer;
+    padding-right: 50px;
+}
+
+#userInfo span{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.iconUser{
+    position: relative;
+}
+
+.avatar{
+    padding: 3px 0 5px 20px;
+    border-radius: 100px;
+}
+
+.messages{
+    position: absolute;
+    height: 15px;
+    margin-left: -10px;
+    margin-top: 5px;
+    display: none;
+}
+
+.arrow{
+    position: absolute;
+    height: 10px;
+    margin-top: 36px;
+}
+
+/*-----------NAV-------------*/
+
+nav{
+    position: absolute;
+    height: 50px;
+    width: 100%;
+    margin-top: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+nav img{
+    height: 30px;
+}
+
+#navegadorMain{
+    display: none;
+    list-style: none;
+    padding: 0;
+    margin: 0 10px 0 10px;
+    flex-direction: row;
+    justify-content: center;
+    z-index: 0;
+}
+
+#navegadorUser{
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0;
+}
+
+#navegadorMain li, #navegadorUser li{
+    width: 150px;
+    height: 40px;
+    margin-right: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#navegadorUser li{
+    width: 250px;
+    height: 50px;
+    margin-right: 35px;
+}
+
+#navegadorMain li a, #navegadorUser li a{
+    padding: 4px;
+    width: 100%;
+    height: 100%;
+    background: #FF1D28;
+    color: #F0F0F0;
+    z-index: 0;
+    cursor: pointer;
+    vertical-align: middle;
+    border-radius: 0 0 25px 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#navegadorUser li a{
+    border-radius: 0;
+}
+
+#navegadorMain li a span, #navegadorUser li a span{
+    margin-left: 5px;
+    font-weight: bold;
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#navegadorUser li a img {
+    margin-top: 5px;
+}
+
+.selected{
+    opacity: 1;
+}
+
+.notSelected{
+    opacity: 0.5;
+}
+
+#navegadorMain li a:hover, #navegadorUser li a:hover{
+    opacity: 1;
+}
+
+.subir{
+    background: #F0F0F0 !important;
+    color: #FF1D28 !important;
+}
+
+/*---------SECTION-------------*/
+
+section{
+    position: relative;
+}
+
+/*-----------FOOTER-----------*/
+
+footer{
+    position: relative;
+    width: 100%;
+    height: 43px;
+    padding: 0 10px 0 10px;
+    background-color: #F0F0F0;
+    margin-top: -43px;
+    clear: both;
+}
+
+footer img{
+    padding: 3px 0 2px 0;
+    height: 40px;
+    float: left;
+}
+
+.redesSociales{
+    float: right;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.redesSociales:hover{
+    filter: opacity(70%);
+}
