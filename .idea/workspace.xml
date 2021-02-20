@@ -43,6 +43,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/img" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -66,6 +67,7 @@
       <workItem from="1613048790863" duration="338000" />
       <workItem from="1613635631882" duration="2757000" />
       <workItem from="1613748205390" duration="10303000" />
+      <workItem from="1613825102850" duration="157000" />
     </task>
     <task id="LOCAL-00001" summary="commit front">
       <created>1613759799371</created>
@@ -113,6 +115,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="648" y="84" width="525" height="542" key="NewPhpClassDialog/0.0.1366.738@0.0.1366.738" timestamp="1613749421924" />
+    <state x="461" y="164" key="SettingsEditor" timestamp="1613825258694">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="164" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1613825258694" />
     <state x="275" y="101" key="Vcs.Push.Dialog.v2" timestamp="1613748539108">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
