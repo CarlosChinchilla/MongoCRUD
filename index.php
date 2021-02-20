@@ -2,15 +2,9 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FatuiGenerator</title>
-    <script type="text/javascript" src="js/jquery-3.5.1.min.js"></script>
-    <script type="text/javascript" src="js/scripts.js"></script>
-    <script type="text/javascript" src="gestor/js/scripts.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="shortcut icon" href="img/fatuiD.png" />
-
+    <?php
+    include("includes/head.php");
+    ?>
 </head>
 
 <body>
@@ -30,11 +24,33 @@
         include("includes/header.php");
         ?>
 
-        <?php
-        include("includes/nav.php");
-        ?>
+        <nav>
+            <ul id="navegadorMain">
+                <li><a id="homeLink" class="selected" href="index.php"><img src="img/home.png"><span>INICIO</span></a></li>
+                <li><a id="newLink" class="notSelected" href="NuevoFatui.php"><img src="img/new.png"><span>NUEVO FATUI</span></a></li>
+                <li><a id="listLink" class="notSelected" href="ListaFatuis.php"><img src="img/trending.png"><span>MIS FATUIS</span></a></li>
+            </ul>
+        </nav>
 
-        <section></section>
+        <section>
+
+            <div id="contenidoMain">
+
+                <img class="logoWeb" src="img/logoW.png">
+
+                <div class="textMain">
+
+                    <h1>¿Qué es <a class="colorAccent">FatuiGenerator</a>?</h1>
+                    <p><a class="colorAccent">FatuiGenerator</a> es el generador y Gestor de Fatuis.</p>
+                    <p>Los <a class="colorAccent">Fatui</a> son los enemigos principales que te encuentras en tu aventura del videojuego <a class="colorAccent">"Down to Heaven"</a>.</p>
+
+                    <img class="logoGame" src="img/DawnToHeavenLogo.png">
+                </div>
+
+
+            </div>
+
+        </section>
 
     </div>
 

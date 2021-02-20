@@ -11,7 +11,6 @@
         display: flex !important;
 
     }
-
 }
 
 @media only screen and (max-width: 960px) {
@@ -70,6 +69,15 @@
         right: 0;
     }
 
+    .notSelected{
+        opacity: 1 !important;
+        background: #990e15 !important;
+    }
+
+    #navegadorMain li a:hover, #navegadorUser li a:hover{
+        background: #FF1D28 !important;
+    }
+
     #navegadorMain li, #navegadorUser li{
         margin: 0 !important;
         width: 100% !important;
@@ -82,6 +90,47 @@
 
     #navegadorMain li a img, #navegadorUser li a img{
         margin-top: 10px;
+    }
+
+    /*------------CONTENIDO MAIN------------*/
+
+    .logoWeb{
+        width: 90% !important;
+    }
+
+    .logoGame{
+        width: 200px !important;
+    }
+
+    .textMain{
+        width: 100% !important;
+        margin: 20px auto 0px auto !important;
+        padding: 30px 30px 18px 30px !important;
+        border-radius: 0 !important;
+    }
+
+    /*-----------NEW FATUI---------------*/
+
+    #formRest>div{
+        display: none !important;
+    }
+
+    .number, .inputs{
+        text-align: center !important;
+    }
+
+    #form ul{
+        width: 100% !important;
+    }
+
+    #formRest{
+        width: 100% !important;
+        min-width: 0 !important;
+        margin-bottom: 50px;
+    }
+
+    #contenidoNew{
+        margin-top: 90px !important;
     }
 
     /*------------------------*/
@@ -253,7 +302,7 @@ nav img{
     margin: 0 10px 0 10px;
     flex-direction: row;
     justify-content: center;
-    z-index: 0;
+    z-index: 10;
 }
 
 #navegadorUser{
@@ -362,4 +411,146 @@ footer img{
 
 .redesSociales:hover{
     filter: opacity(70%);
+}
+
+/*---------CONTENIDO INDEX-----------*/
+
+#contenidoMain{
+    width: 100%;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.logoWeb{
+    width: 700px;
+    margin: auto;
+}
+
+.logoGame{
+    width: 300px;
+    margin: 30px auto 0 auto;
+}
+
+.textMain{
+    width: 500px;
+    background: #F0F0F0;
+    color: #3A3A3A;
+    margin: auto;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+}
+
+.textMain>h1{
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.textMain>p{
+    margin-top: 20px;
+}
+
+.colorAccent{
+    color: #FF1D28;
+    font-weight: bolder;
+}
+
+
+/*----------FORM--------------*/
+
+#contenidoNew{
+    margin-top: 120px;
+}
+
+#contenidoNew>h1{
+    margin-bottom: 20px;
+    color: #F0F0F0;
+}
+
+#form{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+}
+
+#form ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 300px;
+}
+
+li>label{
+    font-weight: bold;
+}
+
+.inputs{
+    width: 20%;
+    min-width: 250px;
+    padding: 12px 20px;
+    margin: 10px 0 20px 0;
+    display: inline-block;
+    border: 0 solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.number{
+    width: 5%;
+    min-width: 50px;
+    text-align: right;
+    padding-right: 0;
+    padding-left: 0;
+}
+
+#formRest, #formRestEd{
+    width:30%;
+    padding:3% 2% 2% 2%;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+    min-width:500px;
+    background-color: #444444;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+
+}
+
+#formRest>div{
+    width: 200px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#formRest label, #formRestEd label{
+    color: #FF1D28;
+}
+
+.button{
+    font-size: 17px;
+    height: 50px;
+    width: 200px;
+    margin: 15px auto;
+    background-color: #FF1D28;
+    color: #ffffff;
+    font-weight: bolder;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+.button:hover{
+    background-color: #ff5058;
+    transition: all ease 0.1s;
+}
+
+.button:active{
+    background-color: #8f0c14;
 }

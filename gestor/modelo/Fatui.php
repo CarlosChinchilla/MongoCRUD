@@ -107,7 +107,7 @@ class Fatui
     }
 
 
-    public function insertarFatui(){
+    public function insertarFatui($fatui){
 
         FatuiDAO::insertarFatui($fatui);
 
