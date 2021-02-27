@@ -33,7 +33,7 @@ function validacion(){
 
     }
 
-    if (isNaN(datos[2].value) || datos[2].value >= 0 || datos[2].value.length >= 3){
+    if (isNaN(datos[2].value) || datos[2].value <= 0 || datos[2].value.length >= 3){
 
         todoOk = false;
 
@@ -45,7 +45,7 @@ function validacion(){
 
     }
 
-    if (isNaN(datos[3].value) || datos[3].value >= 0 || datos[3].value.length >= 3){
+    if (isNaN(datos[3].value) || datos[3].value <= 0 || datos[3].value.length >= 3){
 
         todoOk = false;
 
@@ -57,7 +57,7 @@ function validacion(){
 
     }
 
-    if (isNaN(datos[4].value) || datos[4].value >= 0 || datos[4].value.length >= 3){
+    if (isNaN(datos[4].value) || datos[4].value <= 0 || datos[4].value.length >= 3){
 
         todoOk = false;
 
@@ -73,8 +73,9 @@ function validacion(){
 
         //submit
         document.getElementById('formRest').submit();
+        alert("Éxito: Fatui creado correctamente");
 
     }else{
-        alert("Existen campos con datos erroneos");
+        alert("Error: Existen campos con datos erroneos");
     }
 }

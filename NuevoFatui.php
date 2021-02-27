@@ -75,11 +75,11 @@ if(isset($_POST) && !empty($_POST)) {
                                 </select>
                             </li>
                             <li><label>Ataque: </label><input class="inputs number" type="number" name="ataque"
-                                       placeholder="Ataque del Fatui"value="1" min="1" onchange=""></li>
+                                       placeholder="Ataque del Fatui"value="0" min="0" onchange=""></li>
                             <li><label>Defensa: </label><input class="inputs number" type="number" name="defensa"
-                                       placeholder="Defensa del Fatui" value="1" min="1" onchange=""></li>
+                                       placeholder="Defensa del Fatui" value="0" min="0" onchange=""></li>
                             <li><label>Velocidad: </label><input class="inputs number" type="number" name="velocidad"
-                                       placeholder="Velocidad del Fatui" value="1" min="1" onchange=""></li>
+                                       placeholder="Velocidad del Fatui" value="0" min="0" onchange=""></li>
 
                             <li><button class="button" type="button" value="Enviar"
                                         onclick="validacion()">Crear Fatui</button></li>

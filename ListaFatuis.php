@@ -30,7 +30,45 @@
 
             <div id="contenidoList">
 
+                <div id="listaFatuis">
 
+                    <div class="fatuiEnter">
+
+                        <div class="imageFatui"><img src="img/fatuiD.png"></div>
+                        <div class="dataFatui">
+
+                            <div class="dataTop">
+
+                                <p>Nombre: </p> <label>Nombre</label>
+
+                                <p>Tipo: </p> <label>Tipo</label>
+
+                            </div>
+
+                            <div class="dataBot">
+
+                                <p>Ataque: </p> <label>0</label>
+
+                                <p>Defensa: </p> <label>0</label>
+
+                                <p>Velocidad: </p> <label>0</label>
+
+                            </div>
+
+                        </div>
+                        <div class="botones">
+
+                            <button class="button bList" type="button" value="Enviar"
+                                    onclick="">Editar</button>
+
+                            <button class="button bList" type="button" value="Enviar"
+                                    onclick="">Eliminar</button>
+
+                        </div>
+
+                    </div>
+
+                </div>
 
             </div>
 

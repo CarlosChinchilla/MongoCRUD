@@ -556,3 +556,78 @@ li>label{
 .button:active{
     background-color: #8f0c14;
 }
+
+/*------------- LISTA FATUIS--------------*/
+
+#contenidoList{
+    margin-top: 120px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.listaFatuis{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.fatuiEnter{
+    width: 960px;
+    height: 200px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #444444;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+}
+
+.imageFatui img{
+    width: 200px;
+    height: 200px;
+}
+
+.dataFatui{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: 0 0 0 20px;
+}
+
+.dataTop, .dataBot{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+}
+
+.dataTop p, .dataBot p{
+    font-size: 15px;
+    color: #FF1D28;
+    font-weight: bolder;
+    margin: 0 10px 0 0;
+    padding: 10px;
+}
+
+.dataTop label, .dataBot label{
+    font-size: 15px;
+    background: #F0F0F0;
+    margin: 0 50px 0 0;
+    padding: 10px 15px;
+    border-radius: 10px;
+    box-shadow: inset 3px 3px 3px 0px rgba(0,0,0,0.5);
+}
+
+.botones{
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.bList{
+    width: 90%;
+    margin-right: 10%;
+}
