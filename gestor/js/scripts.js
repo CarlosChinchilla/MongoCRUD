@@ -71,6 +71,7 @@ function validacion(){
 
     if(todoOk){
 
+        //submit
         document.getElementById('formRest').submit();
 
     }else{
