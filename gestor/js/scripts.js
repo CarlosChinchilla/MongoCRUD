@@ -76,6 +76,4 @@ function validacion(){
     }else{
         alert("Existen campos con datos erroneos");
     }
-
-    //alert("Todo OK");
 }
