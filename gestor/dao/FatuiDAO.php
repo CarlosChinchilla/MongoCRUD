@@ -9,7 +9,7 @@ class FatuiDAO
     public static function insertFatui($fatui){
         $connection = new MongoDB\Driver\Manager("mongodb://localhost:27017");
         $bulk = new MongoDB\Driver\BulkWrite;
-        $bulk->insert(['nombre' => $fatui["nombre"], 'ataque' => $fatui["ataque"], 'defensa' => $fatui["defensa"], 'velocidad' => $fatui["velocidad"], 'tipo' => $fatui["tipo"]]);
+        $bulk->insert(['nombre' => $fatui["nombre"], 'tipo' => $fatui["tipo"], 'ataque' => $fatui["ataque"], 'defensa' => $fatui["defensa"], 'velocidad' => $fatui["velocidad"]]);
         $connection->executeBulkWrite("Lista.Fatuis", $bulk);
     }
 

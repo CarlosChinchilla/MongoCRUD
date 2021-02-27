@@ -1,16 +1,21 @@
 <?php
 require "gestor/modelo/Fatui.php";
 
-if(!empty($_POST['id'])){ //editar videojuego existente
+$fatui = new fatui();
+if(isset($_POST) && !empty($_POST)) {
+    if (!empty($_POST['id'])) { //editar videojuego existente
 
-    $id = intval($_POST['id']);
+        //$id = intval($_POST['id']);
 
-    $videojuego->editarVideojuego($id, $_POST,$_FILES['caratula']);
+        //$fatui->editFatui($id, $_POST,$_FILES['caratula']);
 
-}else{ //insertar nuevo videojuego
+    } else { //insertar nuevo videojuego
 
-    $videojuego->insertarVideojuego($_POST,$_FILES['caratula']);
+        $fatui->insertFatui($_POST);
 
+        header("ListaFatuis.php");
+
+    }
 }
 ?>
 
@@ -60,7 +65,7 @@ if(!empty($_POST['id'])){ //editar videojuego existente
                             <li><input type="hidden" name="id" value="0"></li>
                             <li><label>Nombre: </label></li>
                             <li><input class="inputs" type="text" name="nombre"
-                                       placeholder="Nombre fatui" onchange=""></li>
+                                       placeholder="Nombre Fatui" onchange=""></li>
                             <li><label>Tipo: </label></li>
                             <li>
                                 <select class="inputs" name="tipo">
@@ -70,11 +75,11 @@ if(!empty($_POST['id'])){ //editar videojuego existente
                                 </select>
                             </li>
                             <li><label>Ataque: </label><input class="inputs number" type="number" name="ataque"
-                                       placeholder="Ataque del Fatui"value="0" onchange=""></li>
+                                       placeholder="Ataque del Fatui"value="1" min="1" onchange=""></li>
                             <li><label>Defensa: </label><input class="inputs number" type="number" name="defensa"
-                                       placeholder="Defensa del Fatui" value="0" onchange=""></li>
+                                       placeholder="Defensa del Fatui" value="1" min="1" onchange=""></li>
                             <li><label>Velocidad: </label><input class="inputs number" type="number" name="velocidad"
-                                       placeholder="Velocidad del Fatui" value="0" onchange=""></li>
+                                       placeholder="Velocidad del Fatui" value="1" min="1" onchange=""></li>
 
                             <li><button class="button" type="button" value="Enviar"
                                         onclick="validacion()">Crear Fatui</button></li>

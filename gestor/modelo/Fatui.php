@@ -1,4 +1,5 @@
 <?php
+require "gestor/dao/FatuiDAO.php";
 
 class Fatui
 {
@@ -17,13 +18,13 @@ class Fatui
      * @param $velocidad
      * @param $tipo
      */
-    public function __construct($nombre = "", $ataque = "", $defensa = "", $velocidad = "", $tipo = "")
+    public function __construct($nombre = "", $tipo = "", $ataque = "", $defensa = "", $velocidad = "")
     {
         $this->nombre = $nombre;
+        $this->tipo = $tipo;
         $this->ataque = $ataque;
         $this->defensa = $defensa;
         $this->velocidad = $velocidad;
-        $this->tipo = $tipo;
     }
 
     /**
@@ -107,9 +108,9 @@ class Fatui
     }
 
 
-    public function insertarFatui($fatui){
+    public function insertFatui($fatui){
 
-        FatuiDAO::insertarFatui($fatui);
+        FatuiDAO::insertFatui($fatui);
 
     }
 
