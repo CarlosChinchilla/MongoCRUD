@@ -25,6 +25,24 @@ class ListaFatuis
         }
     }
 
+    public function getListaBusqueda($busqueda){
+        $rows = FatuiDAO::getFatuisBuscar($busqueda);
+        foreach ($rows as $document) {
+            $fatui = json_decode(json_encode($document),true);
+            $id = implode($fatui["_id"]);
+            array_push($this->lista,new Fatui($id,$fatui["nombre"],$fatui["tipo"],$fatui["ataque"],$fatui["defensa"],$fatui["velocidad"]));
+        }
+    }
+
+    public function getListaId($id){
+        $rows = FatuiDAO::getFatuibyId($id);
+        foreach ($rows as $document) {
+            $fatui = json_decode(json_encode($document),true);
+            $id = implode($fatui["_id"]);
+            array_push($this->lista,new Fatui($id,$fatui["nombre"],$fatui["tipo"],$fatui["ataque"],$fatui["defensa"],$fatui["velocidad"]));
+        }
+    }
+
     public function imprimirLista(){
         $html = "";
 
@@ -35,7 +53,17 @@ class ListaFatuis
         }
 
         for($i=0;$i<sizeof($this->lista);$i++){
-            $html .= $this->lista[$i]->imprimirEntrada($i);
+            $html .= $this->lista[$i]->imprimirEntrada();
+        }
+
+        return $html;
+    }
+
+    public function imprimirListaEdit(){
+        $html = "";
+
+        for($i=0;$i<sizeof($this->lista);$i++){
+            $html .= $this->lista[$i]->imprimirFormEdit();
         }
 
         return $html;

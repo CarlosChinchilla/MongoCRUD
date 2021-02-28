@@ -38,6 +38,7 @@ $(document).ready(function(){
     });
 });
 
-function abrirEditar(){
+function abrirEditar($id){
+    editarFatui($id)
     $("#modalEdit").fadeIn();
 }

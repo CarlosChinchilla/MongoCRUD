@@ -129,14 +129,25 @@
         margin-bottom: 50px;
     }
 
+    #formRestEdit{
+        margin: 0 0 0 15px !important;
+    }
+
     #contenidoNew{
         margin-top: 90px !important;
     }
 
     #cerrrarEdit{
-        top: -10px !important;
-        right: 0 !important;
+        top: 0 !important;
+        right: 25px !important;
         font-size: 30px !important;
+    }
+
+    /*-------------BUSCAR---------------*/
+
+    .buscador{
+        width: 100% !important;
+        min-width: 0 !important;
     }
 
     /*------------- LISTAR -------------*/
@@ -177,11 +188,11 @@
 
     .botones{
         width: auto !important;
-        flex-direction: row !important;
+        margin: 20px 0 0 0 !important;
     }
 
     .bList{
-        margin: 25px 5% 20px 5% !important;
+        margin: 0 5% 20px 5% !important;
     }
 
     .dataTop label, .dataBot label{
@@ -748,8 +759,8 @@ li>label{
 #cerrrarEdit {
     position: relative;
     height: 45px;
-    right: -15px;
-    top: -45px;
+    right: 40px;
+    top: 10px;
     font-size: 35px;
     font-weight: bold;
     cursor: pointer;
@@ -763,4 +774,70 @@ li>label{
 
 #cerrrarEdit:active{
     color: #8f0c14;
+}
+
+/*------------------BUSCAR----------------------------*/
+
+.buscador{
+    width: 50%;
+    min-width:500px;
+    margin: 0px auto 30px auto;
+    padding: 10px 0px 40px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 20px;
+    background-color: #444444;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+}
+
+.buscador>h1{
+    color: #006700;
+}
+
+.textBusc{
+    color: #737373;
+    margin-bottom: 20px;
+}
+
+#formBuscar{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.buscar{
+    outline: none;
+    width: 60%;
+    height: 40px;
+    border-radius: 10px 0px 0px 10px;
+    font-size: 15px;
+    background-color: #ffffff;
+    background-image: url('../img/lupamini.png');
+    background-position: 12px 10px;
+    background-repeat: no-repeat;
+    padding: 0px 0px 0px 45px;
+    border: 1px solid #FF1D28;
+}
+.botBusqueda{
+    background-color: #FF1D28;
+    font-size: 15px;
+    color: #ffffff;
+    height: 40px;
+    width: 25%;
+    border: none;
+    border-radius: 0px 10px 10px 0px;
+    font-weight: bolder;
+    cursor: pointer;
+    border: 1px solid #FF1D28;
+    border-left: none;
+}
+
+.botBusqueda:hover{
+    background-color: #ff5058;
+    transition: all ease 0.1s;
+}
+
+.botBusqueda:active{
+    background-color: #8f0c14;
 }

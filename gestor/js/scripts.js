@@ -85,7 +85,7 @@ function validacion(){
 
 /*-----------------VALIDACION EDITAR----------------*/
 
-function validacionEditar(){
+function validacionEditar(id){
 
     var todoOk = true;
 
@@ -192,7 +192,8 @@ function ajax() {
     return req;
 }
 
-//Borrar fatui
+//--------------Borrar fatui
+
 var borrar = new ajax();
 function borrarFatui(id) {
 
@@ -205,7 +206,6 @@ function borrarFatui(id) {
         borrar.onreadystatechange = borrarFatuiResponse;
         borrar.send(null);
     }
-
 }
 
 function borrarFatuiResponse() {
@@ -219,3 +219,58 @@ function borrarFatuiResponse() {
         }
     }
 }
+
+//--------------Buscar fatui
+
+var buscar = new ajax();
+function buscarFatui(busqueda) {
+
+    var myurl = 'gestor/llamadas/buscarFatui.php';
+    myRand = parseInt(Math.random() * 999999999999999);
+    //alert(id);
+    modurl = myurl + '?rand=' + myRand + '&busqueda=' + busqueda;
+    buscar.open("GET", modurl, true);
+    buscar.onreadystatechange = buscarFatuiResponse;
+    buscar.send(null);
+
+}
+
+function buscarFatuiResponse() {
+
+    if (buscar.readyState == 4) {
+        if(buscar.status == 200) {
+
+            var listaFatuis = buscar.responseText;
+
+            document.getElementById('listaFatuis').innerHTML =  listaFatuis;
+        }
+    }
+}
+
+//--------------Editar fatui Ventana
+
+var editar = new ajax();
+function editarFatui(id) {
+
+    var myurl = 'gestor/llamadas/editFatui.php';
+    myRand = parseInt(Math.random() * 999999999999999);
+    //alert(id);
+    modurl = myurl + '?rand=' + myRand + '&id=' + id;
+    editar.open("GET", modurl, true);
+    editar.onreadystatechange = editFatuiResponse;
+    editar.send(null);
+
+}
+
+function editFatuiResponse() {
+
+    if (editar.readyState == 4) {
+        if(editar.status == 200) {
+
+            var editFatui = editar.responseText;
+
+            document.getElementById('formRestEdit').innerHTML =  editFatui;
+        }
+    }
+}
+

@@ -149,9 +149,7 @@ class Fatui
         FatuiDAO::updateFatui($fatui);
     }
 
-    public function imprimirEntrada($n){
-
-        $n+=1;
+    public function imprimirEntrada(){
 
         $html = "";
 
@@ -170,13 +168,50 @@ class Fatui
                             </div>
                             <div class='botones'>
 
-                                <a href='?pos=".$n."'><button class='button bList editButton' type='button' value='Editar'
-                                        onclick=''>Editar</button></a>
+                                <button class='button bList editButton' type='button' value='Editar'
+                                        onclick='abrirEditar(`". $this->id ."`)'>Editar</button>
 
                                 <button class='button bList' type='button' value='Eliminar'
                                         onclick='borrarFatui(`". $this->id ."`)'>Eliminar</button>
                             </div>
                         </div>";
+
+        return $html;
+
+    }
+
+    public function imprimirFormEdit(){
+
+        $html = "";
+
+        $html .= "<div>
+                        <img src='img/fatuiD.png'>
+                    </div>
+
+                    <ul>
+                        <li><input type='hidden' name='id' value=".$this->id."></li>
+                        <li><label>Nombre: </label></li>
+                        <li><input class='inputs' type='text' name='nombre'
+                                   placeholder='Nombre Fatui' value=".$this->nombre."></li>
+                        <li><label>Tipo: </label></li>
+                        <li>
+                            <select class='inputs' name='tipo'>
+                                <option value=".$this->tipo." selected>".$this->tipo." (Actual)</option>
+                                <option value='Neutro'>Neutro</option>
+                                <option value='Sagrado'>Sagrado</option>
+                                <option value='Profano'>Profano</option>
+                            </select>
+                        </li>
+                        <li><label>Ataque: </label><input class='inputs number' type='number' name='ataque'
+                                                          placeholder='Ataque del Fatui' value=".$this->ataque." min='0'></li>
+                        <li><label>Defensa: </label><input class='inputs number' type='number' name='defensa'
+                                                           placeholder='Defensa del Fatui' value=".$this->defensa." min='0'></li>
+                        <li><label>Velocidad: </label><input class='inputs number' type='number' name='velocidad'
+                                                             placeholder='Velocidad del Fatui' value=".$this->velocidad." min='0'></li>
+
+                        <li><button class='button' type='button' value='Editar'
+                                    onclick='validacionEditar()'>Editar Fatui</button></li>
+                    </ul>";
 
         return $html;
 

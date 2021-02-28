@@ -36,6 +36,28 @@ class FatuiDAO
     }
 
     /**
+     * @return \MongoDB\Driver\Cursor
+     * @throws \MongoDB\Driver\Exception\Exception
+     */
+    public static function getFatuisBuscar($busqueda){
+        $connection= new MongoDB\Driver\Manager("mongodb://localhost:27017");
+        $filter = ['nombre' => $busqueda];
+        $query = new MongoDB\Driver\Query($filter);
+        return $connection->executeQuery("Lista.Fatuis", $query);
+    }
+
+    /**
+     * @return \MongoDB\Driver\Cursor
+     * @throws \MongoDB\Driver\Exception\Exception
+     */
+    public static function getFatuibyId($id){
+        $connection= new MongoDB\Driver\Manager("mongodb://localhost:27017");
+        $filter = ['_id' => new MongoDB\BSON\ObjectId($id)];
+        $query = new MongoDB\Driver\Query($filter);
+        return $connection->executeQuery("Lista.Fatuis", $query);
+    }
+
+    /**
      * @param $fatui
      */
     public static function updateFatui($fatui){
