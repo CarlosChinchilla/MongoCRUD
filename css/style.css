@@ -133,6 +133,60 @@
         margin-top: 90px !important;
     }
 
+    /*------------- LISTAR -------------*/
+
+    #contenidoList{
+        margin-top: 90px !important;
+    }
+
+    #contenidoPaginaLista{
+        width: 100%;
+    }
+
+    #contenidoPaginaLista img{
+        display: none;
+    }
+
+    .listaFatuis{
+        width: 100% !important;
+    }
+
+    .fatuiEnter{
+        width: 100% !important;
+        height: auto !important;
+        flex-direction: column !important;
+    }
+
+    .dataBot, .dataTop{
+        width: 100% !important;
+        margin: 15px 0 0 0 !important;
+        justify-content: center !important;
+        flex-direction: column !important;
+    }
+
+    .dataFatui{
+        width: auto !important;
+        margin: 0 5% 0 5% !important;
+    }
+
+    .botones{
+        width: auto !important;
+        flex-direction: row !important;
+    }
+
+    .bList{
+        margin: 25px 5% 20px 5% !important;
+    }
+
+    .dataTop label, .dataBot label{
+        margin: 0 !important;
+    }
+
+    .dataBot p, .dataTop p{
+        margin: 0 !important;
+    }
+
+
     /*------------------------*/
 
 }
