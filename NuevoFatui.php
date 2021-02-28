@@ -3,6 +3,7 @@ require "gestor/modelo/Fatui.php";
 require_once "gestor/dao/FatuiDAO.php";
 
 $fatui = new Fatui();
+
 if(isset($_POST) && !empty($_POST)) {
     if (!empty($_POST['id'])) { //editar fatui existente
 

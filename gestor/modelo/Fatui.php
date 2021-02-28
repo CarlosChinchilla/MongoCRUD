@@ -144,7 +144,15 @@ class Fatui
         FatuiDAO::deleteFatui($id);
     }
 
-    public function imprimirEntrada(){
+    public function updateFatui($fatui)
+    {
+        FatuiDAO::updateFatui($fatui);
+    }
+
+    public function imprimirEntrada($n){
+
+        $n+=1;
+
         $html = "";
 
         $html .= "<div class='fatuiEnter'>
@@ -162,8 +170,8 @@ class Fatui
                             </div>
                             <div class='botones'>
 
-                                <button class='button bList' type='button' value='Editar'
-                                        onclick=''>Editar</button>
+                                <a href='?pos=".$n."'><button class='button bList editButton' type='button' value='Editar'
+                                        onclick=''>Editar</button></a>
 
                                 <button class='button bList' type='button' value='Eliminar'
                                         onclick='borrarFatui(`". $this->id ."`)'>Eliminar</button>

@@ -24,3 +24,20 @@ $(document).ready(function(){
         $("#modal").fadeOut();
     });
 });
+
+//editar fatui
+/*
+$(document).ready(function(){
+    $(".editButton").click(function(){
+        $("#modalEdit").fadeIn();
+    });
+});*/
+$(document).ready(function(){
+    $("#cerrrarEdit").click(function(){
+        $("#modalEdit").fadeOut();
+    });
+});
+
+function abrirEditar(){
+    $("#modalEdit").fadeIn();
+}

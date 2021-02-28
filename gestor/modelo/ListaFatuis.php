@@ -11,6 +11,10 @@ class ListaFatuis
 
     }
 
+    public function getArrayLista()
+    {
+        return $this->lista;
+    }
 
     public function getLista(){
         $rows = FatuiDAO::getFatuis();
@@ -20,7 +24,6 @@ class ListaFatuis
             array_push($this->lista,new Fatui($id,$fatui["nombre"],$fatui["tipo"],$fatui["ataque"],$fatui["defensa"],$fatui["velocidad"]));
         }
     }
-
 
     public function imprimirLista(){
         $html = "";
@@ -32,7 +35,7 @@ class ListaFatuis
         }
 
         for($i=0;$i<sizeof($this->lista);$i++){
-            $html .= $this->lista[$i]->imprimirEntrada();
+            $html .= $this->lista[$i]->imprimirEntrada($i);
         }
 
         return $html;

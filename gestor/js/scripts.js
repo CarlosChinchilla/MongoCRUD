@@ -1,3 +1,6 @@
+
+/*-----------------VALIDACION INSERTAR----------------*/
+
 function validacion(){
 
     var todoOk = true;
@@ -73,13 +76,102 @@ function validacion(){
 
         //submit
         document.getElementById('formRest').submit();
-        //alert("Éxito: Fatui creado correctamente");
+        alert("Éxito: Fatui creado correctamente");
 
     }else{
         alert("Error: Existen campos con datos erroneos");
     }
 }
 
+/*-----------------VALIDACION EDITAR----------------*/
+
+function validacionEditar(){
+
+    var todoOk = true;
+
+    var formulario = document.getElementsByTagName("formRestEdit");
+
+    var datos = formRestEdit.getElementsByTagName("input");
+
+    var selects = formRestEdit.getElementsByTagName("select");
+
+
+    if (selects[0].value == ""){
+
+        todoOk = false;
+
+        selects[0].style.background = "#FDD4D4";
+
+    }else{
+
+        selects[0].style.background = "#ffffff";
+
+    }
+
+    if(datos[0].value == 0){
+
+        todoOk = false;
+
+    }
+
+    if (datos[1].value == "" || datos[1].value.length >= 15){
+
+        todoOk = false;
+
+        datos[1].style.background = "#FDD4D4";
+
+    }else{
+
+        datos[1].style.background = "#ffffff";
+
+    }
+
+    if (isNaN(datos[2].value) || datos[2].value <= 0 || datos[2].value.length >= 3){
+
+        todoOk = false;
+
+        datos[2].style.background = "#FDD4D4";
+
+    }else{
+
+        datos[2].style.background = "#ffffff";
+
+    }
+
+    if (isNaN(datos[3].value) || datos[3].value <= 0 || datos[3].value.length >= 3){
+
+        todoOk = false;
+
+        datos[3].style.background = "#FDD4D4";
+
+    }else{
+
+        datos[3].style.background = "#ffffff";
+
+    }
+
+    if (isNaN(datos[4].value) || datos[4].value <= 0 || datos[4].value.length >= 3){
+
+        todoOk = false;
+
+        datos[4].style.background = "#FDD4D4";
+
+    }else{
+
+        datos[4].style.background = "#ffffff";
+
+    }
+
+    if(todoOk){
+
+        //submit
+        document.getElementById('formRestEdit').submit();
+        alert("Éxito: Fatui editado correctamente");
+
+    }else{
+        alert("Error: Existen campos con datos erroneos");
+    }
+}
 
 /*----------------AJAX-----------------*/
 
