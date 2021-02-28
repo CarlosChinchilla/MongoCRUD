@@ -1,19 +1,21 @@
 <?php
 require "gestor/modelo/Fatui.php";
+require_once "gestor/dao/FatuiDAO.php";
 
-$fatui = new fatui();
+$fatui = new Fatui();
 if(isset($_POST) && !empty($_POST)) {
-    if (!empty($_POST['id'])) { //editar videojuego existente
+    if (!empty($_POST['id'])) { //editar fatui existente
 
         //$id = intval($_POST['id']);
 
         //$fatui->editFatui($id, $_POST,$_FILES['caratula']);
 
-    } else { //insertar nuevo videojuego
+    } else { //insertar nuevo fatui
 
         $fatui->insertFatui($_POST);
 
-        header("ListaFatuis.php");
+        header("Location: ListaFatuis.php");
+        exit();
 
     }
 }

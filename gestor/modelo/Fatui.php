@@ -1,9 +1,9 @@
 <?php
-require "gestor/dao/FatuiDAO.php";
 
 class Fatui
 {
 
+    private $id;
     private $nombre;
     private $ataque;
     private $defensa;
@@ -12,19 +12,37 @@ class Fatui
 
     /**
      * Fatui constructor.
+     * @param $id
      * @param $nombre
      * @param $ataque
      * @param $defensa
      * @param $velocidad
      * @param $tipo
      */
-    public function __construct($nombre = "", $tipo = "", $ataque = "", $defensa = "", $velocidad = "")
+    public function __construct($id="", $nombre = "", $tipo = "", $ataque = "", $defensa = "", $velocidad = "")
     {
+        $this->id = $id;
         $this->nombre = $nombre;
         $this->tipo = $tipo;
         $this->ataque = $ataque;
         $this->defensa = $defensa;
         $this->velocidad = $velocidad;
+    }
+
+    /**
+     * @return mixed|string
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param mixed|string $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
     }
 
     /**
@@ -107,12 +125,55 @@ class Fatui
         $this->tipo = $tipo;
     }
 
-
-    public function insertFatui($fatui){
-
-        FatuiDAO::insertFatui($fatui);
-
+    public function validacionFatui($datos){
+        $this->setNombre(addslashes($datos['nombre']));
+        $this->setTipo(addslashes($datos['tipo']));
+        $this->setAtaque(addslashes($datos['ataque']));
+        $this->setDefensa(addslashes($datos['defensa']));
+        $this->setVelocidad(addslashes($datos['velocidad']));
     }
 
 
+    public function insertFatui($fatui)
+    {
+        FatuiDAO::insertFatui($fatui);
+    }
+
+    public function deleteFatui($id)
+    {
+        FatuiDAO::deleteFatui($id);
+    }
+
+    public function imprimirEntrada(){
+        $html = "";
+
+        $html .= "<div class='fatuiEnter'>
+                            <div class='imageFatui'><img src='img/fatuiD.png'></div>
+                            <div class='dataFatui'>
+                                <div class='dataTop'>
+                                    <p>Nombre: </p> <label>".$this->nombre."</label>
+                                    <p>Tipo: </p> <label>".$this->tipo."</label>
+                                </div>
+                                <div class='dataBot'>
+                                    <p>Ataque: </p> <label>".$this->ataque."</label>
+                                    <p>Defensa: </p> <label>".$this->defensa."</label>
+                                    <p>Velocidad: </p> <label>".$this->velocidad."</label>
+                                </div>
+                            </div>
+                            <div class='botones'>
+
+                                <button class='button bList' type='button' value='Editar'
+                                        onclick=''>Editar</button>
+
+                                <button class='button bList' type='button' value='Eliminar'
+                                        onclick='borrarFatui(`". $this->id ."`)'>Eliminar</button>
+                            </div>
+                        </div>";
+
+        return $html;
+
+    }
+
 }
+
+

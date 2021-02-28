@@ -567,6 +567,17 @@ li>label{
     justify-content: center;
 }
 
+#contenidoPaginaLista{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#contenidoPaginaLista h1{
+    margin-bottom: 20px;
+    color: #F0F0F0;
+}
+
 .listaFatuis{
     display: flex;
     flex-direction: column;
@@ -577,6 +588,7 @@ li>label{
     width: 960px;
     height: 200px;
     border-radius: 20px;
+    margin-bottom: 20px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;

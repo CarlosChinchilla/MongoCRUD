@@ -73,9 +73,57 @@ function validacion(){
 
         //submit
         document.getElementById('formRest').submit();
-        alert("Éxito: Fatui creado correctamente");
+        //alert("Éxito: Fatui creado correctamente");
 
     }else{
         alert("Error: Existen campos con datos erroneos");
+    }
+}
+
+
+/*----------------AJAX-----------------*/
+
+function ajax() {
+    try {
+        req = new XMLHttpRequest();
+    } catch(err1) {
+        try {
+            req = new ActiveXObject("Msxml2.XMLHTTP");
+        } catch (err2) {
+            try {
+                req = new ActiveXObject("Microsoft.XMLHTTP");
+            } catch (err3) {
+                req = false;
+            }
+        }
+    }
+    return req;
+}
+
+//Borrar fatui
+var borrar = new ajax();
+function borrarFatui(id) {
+
+    if(confirm("¿Desea eliminar el Fatui seleccionado?")) {
+        var myurl = 'gestor/llamadas/borrarFatui.php';
+        myRand = parseInt(Math.random() * 999999999999999);
+        //alert(id);
+        modurl = myurl + '?rand=' + myRand + '&id=' + id;
+        borrar.open("GET", modurl, true);
+        borrar.onreadystatechange = borrarFatuiResponse;
+        borrar.send(null);
+    }
+
+}
+
+function borrarFatuiResponse() {
+
+    if (borrar.readyState == 4) {
+        if(borrar.status == 200) {
+
+            var listaFatuis = borrar.responseText;
+
+            document.getElementById('listaFatuis').innerHTML =  listaFatuis;
+        }
     }
 }
