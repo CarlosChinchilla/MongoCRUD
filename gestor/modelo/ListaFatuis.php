@@ -17,7 +17,7 @@ class ListaFatuis
     }
 
     public function getLista(){
-        $rows = FatuiDAO::getFatuis();
+        $rows = FatuiDAO::getInstance()->getFatuis();
         foreach ($rows as $document) {
             $fatui = json_decode(json_encode($document),true);
             $id = implode($fatui["_id"]);
@@ -26,7 +26,7 @@ class ListaFatuis
     }
 
     public function getListaBusqueda($busqueda){
-        $rows = FatuiDAO::getFatuisBuscar($busqueda);
+        $rows = FatuiDAO::getInstance()->getFatuisBuscar($busqueda);
         foreach ($rows as $document) {
             $fatui = json_decode(json_encode($document),true);
             $id = implode($fatui["_id"]);
@@ -35,7 +35,7 @@ class ListaFatuis
     }
 
     public function getListaId($id){
-        $rows = FatuiDAO::getFatuibyId($id);
+        $rows = FatuiDAO::getInstance()->getFatuibyId($id);
         foreach ($rows as $document) {
             $fatui = json_decode(json_encode($document),true);
             $id = implode($fatui["_id"]);

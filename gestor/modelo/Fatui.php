@@ -136,17 +136,17 @@ class Fatui
 
     public function insertFatui($fatui)
     {
-        FatuiDAO::insertFatui($fatui);
+        FatuiDAO::getInstance()->insertFatui($fatui);
     }
 
     public function deleteFatui($id)
     {
-        FatuiDAO::deleteFatui($id);
+        FatuiDAO::getInstance()->deleteFatui($id);
     }
 
     public function updateFatui($fatui)
     {
-        FatuiDAO::updateFatui($fatui);
+        FatuiDAO::getInstance()->updateFatui($fatui);
     }
 
     public function imprimirEntrada(){
