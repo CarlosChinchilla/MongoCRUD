@@ -11,6 +11,8 @@ function validacion(){
 
     var selects = formRest.getElementsByTagName("select");
 
+    var file = document.getElementById("file-name");
+
 
     if (selects[0].value == ""){
 
@@ -72,6 +74,18 @@ function validacion(){
 
     }
 
+    if (datos[5].value == ""){
+
+        todoOk = false;
+
+        file.style.background = "#FDD4D4";
+
+    }else{
+
+        file.style.background = "#ffffff";
+
+    }
+
     if(todoOk){
 
         //submit
@@ -79,7 +93,7 @@ function validacion(){
         alert("Éxito: Fatui creado correctamente");
 
     }else{
-        alert("Error: Existen campos con datos erroneos");
+        alert("Error: Existen campos con datos erroneos o vacíos");
     }
 }
 
@@ -95,6 +109,7 @@ function validacionEditar(id){
 
     var selects = formRestEdit.getElementsByTagName("select");
 
+    var file = document.getElementById("file-name");
 
     if (selects[0].value == ""){
 
@@ -162,6 +177,18 @@ function validacionEditar(id){
 
     }
 
+    if (datos[5].value == ""){
+
+        todoOk = false;
+
+        file.style.background = "#FDD4D4";
+
+    }else{
+
+        file.style.background = "#ffffff";
+
+    }
+
     if(todoOk){
 
         //submit
@@ -169,7 +196,28 @@ function validacionEditar(id){
         alert("Éxito: Fatui editado correctamente");
 
     }else{
-        alert("Error: Existen campos con datos erroneos");
+        alert("Error: Existen campos con datos erroneos o vacíos");
+    }
+}
+
+/*-----------------ARCHIVOS-------------------*/
+
+function uploadFile(target) {
+    document.getElementById("file-name").innerHTML = target.files[0].name;
+}
+
+function validacionFile(campo,n) {
+
+    var filebox = document.getElementsByClassName("file-box");
+
+    if (!(imagenValida.test(campo.value))){
+
+        filebox[n].style.background = "#FDD4D4";
+
+    }else{
+
+        filebox[n].style.background = "#D6FDDF";
+
     }
 }
 
@@ -195,13 +243,13 @@ function ajax() {
 //--------------Borrar fatui
 
 var borrar = new ajax();
-function borrarFatui(id) {
+function borrarFatui(id,carpeta,imagen) {
 
     if(confirm("¿Desea eliminar el Fatui seleccionado?")) {
         var myurl = 'gestor/llamadas/borrarFatui.php';
         myRand = parseInt(Math.random() * 999999999999999);
         //alert(id);
-        modurl = myurl + '?rand=' + myRand + '&id=' + id;
+        modurl = myurl + '?rand=' + myRand + '&id=' + id + '&carpeta=' + carpeta + '&imagen=' + imagen;
         borrar.open("GET", modurl, true);
         borrar.onreadystatechange = borrarFatuiResponse;
         borrar.send(null);

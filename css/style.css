@@ -161,7 +161,7 @@
     }
 
     #contenidoPaginaLista img{
-        display: none;
+        /*display: none;*/
     }
 
     .listaFatuis{
@@ -201,6 +201,10 @@
 
     .dataBot p, .dataTop p{
         margin: 0 !important;
+    }
+
+    .file-box{
+        width: 85% !important;
     }
 
 
@@ -840,4 +844,72 @@ li>label{
 
 .botBusqueda:active{
     background-color: #8f0c14;
+}
+
+/*-----------------SUBIR ARCHIVO-----------------*/
+
+input[type="file"]{
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.inputfile-box {
+    position: relative;
+    margin: 10px 0 0 0;
+}
+
+.inputfile {
+    display: none;
+}
+
+.file-box {
+    float: right;
+    display: inline-block;
+    background-color: #ffffff;
+    width: 260px;
+    padding: 10px 0 5px 10px;
+    box-sizing: border-box;
+    height: 37px;
+    border-radius: 100px;
+    margin: 0 25px 25px 0;
+    color: black;
+}
+
+.file-button {
+    background-color: #FF1D28;
+    font-size: 13px;
+    color: #ffffff;
+    padding: 0px 10px 0px 0px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    height: 37px;
+    border-radius: 0px 100px 100px 0px;
+    font-weight: bolder;
+    box-sizing: border-box;
+    float: right;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin: 0 25px 25px 0;
+    border-left: 1px solid #FF1D28;
+}
+
+.file-button:hover{
+    background-color: #ff5058;
+    transition: all ease 0.1s;
+}
+
+.file-button:active{
+    background-color: #8f0c14;
+}
+
+span img{
+    float: left;
+    width: 30px;
+    padding: 0px 5px 0px 8px;
 }

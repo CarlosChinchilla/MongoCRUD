@@ -2,6 +2,7 @@
 require "gestor/modelo/Fatui.php";
 require "gestor/modelo/ListaFatuis.php";
 require_once "gestor/dao/FatuiDAO.php";
+require "gestor/modelo/funciones.php";
 
 $fatui = new Fatui();
 $lista = new ListaFatuis();
@@ -10,7 +11,7 @@ $lista->getLista();
 
 if(isset($_POST['id']) && !empty($_POST['id'])) {
 
-    $fatui->updateFatui($_POST);
+    $fatui->updateFatui($_POST,$_FILES['imagen']);
 
     header("Location: ListaFatuis.php");
     exit();

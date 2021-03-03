@@ -21,7 +21,7 @@ class ListaFatuis
         foreach ($rows as $document) {
             $fatui = json_decode(json_encode($document),true);
             $id = implode($fatui["_id"]);
-            array_push($this->lista,new Fatui($id,$fatui["nombre"],$fatui["tipo"],$fatui["ataque"],$fatui["defensa"],$fatui["velocidad"]));
+            array_push($this->lista,new Fatui($id,$fatui["nombre"],$fatui["tipo"],$fatui["ataque"],$fatui["defensa"],$fatui["velocidad"],$fatui["imagen"]));
         }
     }
 
@@ -30,7 +30,7 @@ class ListaFatuis
         foreach ($rows as $document) {
             $fatui = json_decode(json_encode($document),true);
             $id = implode($fatui["_id"]);
-            array_push($this->lista,new Fatui($id,$fatui["nombre"],$fatui["tipo"],$fatui["ataque"],$fatui["defensa"],$fatui["velocidad"]));
+            array_push($this->lista,new Fatui($id,$fatui["nombre"],$fatui["tipo"],$fatui["ataque"],$fatui["defensa"],$fatui["velocidad"],$fatui["imagen"]));
         }
     }
 
@@ -39,7 +39,7 @@ class ListaFatuis
         foreach ($rows as $document) {
             $fatui = json_decode(json_encode($document),true);
             $id = implode($fatui["_id"]);
-            array_push($this->lista,new Fatui($id,$fatui["nombre"],$fatui["tipo"],$fatui["ataque"],$fatui["defensa"],$fatui["velocidad"]));
+            array_push($this->lista,new Fatui($id,$fatui["nombre"],$fatui["tipo"],$fatui["ataque"],$fatui["defensa"],$fatui["velocidad"],$fatui["imagen"]));
         }
     }
 

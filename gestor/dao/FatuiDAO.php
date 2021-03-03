@@ -27,7 +27,7 @@ class FatuiDAO
      */
     public function insertFatui($fatui){
         $bulk = new MongoDB\Driver\BulkWrite;
-        $bulk->insert(['nombre' => $fatui["nombre"], 'tipo' => $fatui["tipo"], 'ataque' => $fatui["ataque"], 'defensa' => $fatui["defensa"], 'velocidad' => $fatui["velocidad"]]);
+        $bulk->insert(['nombre' => $fatui->getNombre(), 'tipo' => $fatui->getTipo(), 'ataque' => $fatui->getAtaque(), 'defensa' => $fatui->getDefensa(), 'velocidad' => $fatui->getVelocidad(), 'imagen' => $fatui->getImagen()]);
         $this->connection->executeBulkWrite("Lista.Fatuis", $bulk);
     }
 
@@ -76,8 +76,8 @@ class FatuiDAO
      */
     public function updateFatui($fatui){
         $bulk = new MongoDB\Driver\BulkWrite;
-        $filter = ['_id' => new MongoDB\BSON\ObjectId($fatui["id"])];
-        $collation = ['$set' => ['nombre' => $fatui["nombre"], 'ataque' => $fatui["ataque"], 'defensa' => $fatui["defensa"], 'velocidad' => $fatui["velocidad"], 'tipo' => $fatui["tipo"]]];
+        $filter = ['_id' => new MongoDB\BSON\ObjectId($fatui->getId())];
+        $collation = ['$set' => ['nombre' => $fatui->getNombre(), 'tipo' => $fatui->getTipo(), 'ataque' => $fatui->getAtaque(), 'defensa' => $fatui->getDefensa(), 'velocidad' => $fatui->getVelocidad(), 'imagen' => $fatui->getImagen()]];
         $bulk->update($filter, $collation);
         $this->connection->executeBulkWrite("Lista.Fatuis", $bulk);
     }

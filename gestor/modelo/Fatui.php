@@ -9,6 +9,8 @@ class Fatui
     private $defensa;
     private $velocidad;
     private $tipo;
+    private $imagen;
+    private $carpeta;
 
     /**
      * Fatui constructor.
@@ -19,7 +21,7 @@ class Fatui
      * @param $velocidad
      * @param $tipo
      */
-    public function __construct($id="", $nombre = "", $tipo = "", $ataque = "", $defensa = "", $velocidad = "")
+    public function __construct($id="", $nombre = "", $tipo = "", $ataque = "", $defensa = "", $velocidad = "", $imagen = "", $carpeta="")
     {
         $this->id = $id;
         $this->nombre = $nombre;
@@ -27,6 +29,8 @@ class Fatui
         $this->ataque = $ataque;
         $this->defensa = $defensa;
         $this->velocidad = $velocidad;
+        $this->imagen = $imagen;
+        $this->carpeta = "fatuis/";
     }
 
     /**
@@ -125,6 +129,43 @@ class Fatui
         $this->tipo = $tipo;
     }
 
+    /**
+     * @return mixed|string
+     */
+    public function getImagen()
+    {
+        return $this->imagen;
+    }
+
+    /**
+     * @param mixed|string $imagen
+     */
+    public function setImagen($imagen)
+    {
+
+        if(strlen($this->imagen)==0){
+            $this->imagen = "noImage.png";
+        }
+
+        $this->imagen = $imagen;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCarpeta()
+    {
+        return $this->carpeta;
+    }
+
+    /**
+     * @param string $carpeta
+     */
+    public function setCarpeta($carpeta)
+    {
+        $this->carpeta = $carpeta;
+    }
+
     public function validacionFatui($datos){
         $this->setNombre(addslashes($datos['nombre']));
         $this->setTipo(addslashes($datos['tipo']));
@@ -133,28 +174,55 @@ class Fatui
         $this->setVelocidad(addslashes($datos['velocidad']));
     }
 
-
-    public function insertFatui($fatui)
-    {
-        FatuiDAO::getInstance()->insertFatui($fatui);
+    public function validacionFatuiId($datos){
+        $this->setNombre(addslashes($datos['nombre']));
+        $this->setTipo(addslashes($datos['tipo']));
+        $this->setAtaque(addslashes($datos['ataque']));
+        $this->setDefensa(addslashes($datos['defensa']));
+        $this->setVelocidad(addslashes($datos['velocidad']));
+        $this->setId(addslashes($datos['id']));
     }
 
-    public function deleteFatui($id)
+
+    public function insertFatui($fatui,$imagen)
     {
+        $this->validacionFatui($fatui);
+
+        $ruta = subirFoto($imagen, $this->carpeta);
+
+        $this->setImagen($ruta);
+
+        FatuiDAO::getInstance()->insertFatui($this);
+    }
+
+    public function deleteFatui($id,$carpeta,$rutaAborrar)
+    {
+        $carpeta="../../".$carpeta;
+        unlink($carpeta.$rutaAborrar);
         FatuiDAO::getInstance()->deleteFatui($id);
     }
 
-    public function updateFatui($fatui)
+    public function updateFatui($fatui,$imagen)
     {
-        FatuiDAO::getInstance()->updateFatui($fatui);
+        $this->validacionFatuiId($fatui);
+
+        $ruta = subirFoto($imagen, $this->carpeta);
+
+        $this->setImagen($ruta);
+
+        FatuiDAO::getInstance()->updateFatui($this);
     }
 
     public function imprimirEntrada(){
 
+        if($this->imagen == null){
+            $this->imagen = "noImage.png";
+        }
+
         $html = "";
 
         $html .= "<div class='fatuiEnter'>
-                            <div class='imageFatui'><img src='img/fatuiD.png'></div>
+                            <div class='imageFatui'><img src='". $this->carpeta . $this->imagen . "'></div>
                             <div class='dataFatui'>
                                 <div class='dataTop'>
                                     <p>Nombre: </p> <label>".$this->nombre."</label>
@@ -172,7 +240,7 @@ class Fatui
                                         onclick='abrirEditar(`". $this->id ."`)'>Editar</button>
 
                                 <button class='button bList' type='button' value='Eliminar'
-                                        onclick='borrarFatui(`". $this->id ."`)'>Eliminar</button>
+                                        onclick='borrarFatui(`". $this->id ."`, `". $this->carpeta ."`,`". $this->imagen ."`)'>Eliminar</button>
                             </div>
                         </div>";
 
@@ -182,10 +250,14 @@ class Fatui
 
     public function imprimirFormEdit(){
 
+        if($this->imagen == null){
+            $this->imagen = "noImage.png";
+        }
+
         $html = "";
 
         $html .= "<div>
-                        <img src='img/fatuiD.png'>
+                        <img src='". $this->carpeta . $this->imagen . "'>
                     </div>
 
                     <ul>
@@ -208,6 +280,20 @@ class Fatui
                                                            placeholder='Defensa del Fatui' value=".$this->defensa." min='0'></li>
                         <li><label>Velocidad: </label><input class='inputs number' type='number' name='velocidad'
                                                              placeholder='Velocidad del Fatui' value=".$this->velocidad." min='0'></li>
+
+                        <li>
+                            <label> Imagen: </label>
+                            <div class='inputfile-box'>
+                                <input type='file' id='file' class='inputfile' name='imagen' onchange='uploadFile(this), validacionFile(this,0)'>
+                                <label for='file'>
+                                    <span id='file-name' class='file-box'></span>
+                                    <span class='file-button'>
+                                        <i class='fa fa-upload' aria-hidden='true'></i>
+                                        <img src='img/upload.png'>
+                                    </span>
+                                </label>
+                            </div>
+                        </li>
 
                         <li><button class='button' type='button' value='Editar'
                                     onclick='validacionEditar()'>Editar Fatui</button></li>

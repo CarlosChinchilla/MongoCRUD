@@ -2,8 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c21cefd2-6aae-4856-972f-44cf596941ab" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/fatuis/noImage.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gestor/modelo/funciones.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/noImage.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ListaFatuis.php" beforeDir="false" afterPath="$PROJECT_DIR$/ListaFatuis.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NuevoFatui.php" beforeDir="false" afterPath="$PROJECT_DIR$/NuevoFatui.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gestor/dao/FatuiDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/gestor/dao/FatuiDAO.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gestor/js/scripts.js" beforeDir="false" afterPath="$PROJECT_DIR$/gestor/js/scripts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gestor/llamadas/borrarFatui.php" beforeDir="false" afterPath="$PROJECT_DIR$/gestor/llamadas/borrarFatui.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gestor/modelo/Fatui.php" beforeDir="false" afterPath="$PROJECT_DIR$/gestor/modelo/Fatui.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gestor/modelo/ListaFatuis.php" beforeDir="false" afterPath="$PROJECT_DIR$/gestor/modelo/ListaFatuis.php" afterDir="false" />
     </list>
@@ -45,21 +53,21 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/img" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/fatuis" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Dovahkiin\PhpstormProjects\MongoCRUD\gestor\llamadas" />
-      <recent name="C:\Users\Dovahkiin\PhpstormProjects\MongoCRUD\gestor\modelo" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Dovahkiin\PhpstormProjects\MongoCRUD\fatuis" />
       <recent name="C:\Users\Dovahkiin\PhpstormProjects\MongoCRUD\img" />
       <recent name="C:\Users\Solrac\Dropbox\Proyectos PHP\MongoCRUD\img" />
       <recent name="C:\Users\Solrac\Dropbox\Proyectos PHP\MongoCRUD\css" />
       <recent name="C:\Users\Solrac\Dropbox\Proyectos PHP\MongoCRUD" />
-      <recent name="C:\Users\Solrac\Dropbox\Proyectos PHP\MongoCRUD\includes" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Dovahkiin\PhpstormProjects\MongoCRUD\gestor\llamadas" />
+      <recent name="C:\Users\Dovahkiin\PhpstormProjects\MongoCRUD\gestor\modelo" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -80,7 +88,10 @@
       <workItem from="1614242060202" duration="8565000" />
       <workItem from="1614461477887" duration="12706000" />
       <workItem from="1614515291429" duration="20318000" />
-      <workItem from="1614586069531" duration="1312000" />
+      <workItem from="1614586069531" duration="2777000" />
+      <workItem from="1614626052394" duration="44000" />
+      <workItem from="1614630660255" duration="728000" />
+      <workItem from="1614758418059" duration="9162000" />
     </task>
     <task id="LOCAL-00001" summary="commit front">
       <created>1613759799371</created>
@@ -138,7 +149,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614553989848</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="SINGLETON">
+      <created>1614587444324</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1614587444324</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -153,7 +171,8 @@
     <MESSAGE value="y RESPONSIVE" />
     <MESSAGE value="CRUD FINALIZADO" />
     <MESSAGE value="AÑADIDO BUSCAR BUSCAR + AJAX" />
-    <option name="LAST_COMMIT_MESSAGE" value="AÑADIDO BUSCAR BUSCAR + AJAX" />
+    <MESSAGE value="SINGLETON" />
+    <option name="LAST_COMMIT_MESSAGE" value="SINGLETON" />
   </component>
   <component name="WindowStateProjectService">
     <state x="715" y="343" key="#Notifications" timestamp="1613825332552">
@@ -164,15 +183,16 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="137" y="23" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.738@0.0.1366.738" timestamp="1613754664338" />
-    <state x="488" y="84" key="#com.intellij.ide.util.MemberChooser" timestamp="1613650964628">
-      <screen x="0" y="0" width="1366" height="738" />
+    <state x="686" y="118" key="#com.intellij.ide.util.MemberChooser" timestamp="1614761783964">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="488" y="84" key="#com.intellij.ide.util.MemberChooser/0.0.1366.738@0.0.1366.738" timestamp="1613650964628" />
-    <state x="277" y="0" key="CommitChangelistDialog2" timestamp="1614553989134">
+    <state x="686" y="118" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1614761783964" />
+    <state x="277" y="0" key="CommitChangelistDialog2" timestamp="1614587443561">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="197" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1614426288842" />
-    <state x="277" y="0" key="CommitChangelistDialog2/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1614553989134" />
+    <state x="277" y="0" key="CommitChangelistDialog2/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1614587443561" />
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1614426651837">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -190,20 +210,20 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="477" y="73" width="327" height="591" key="Github.UntrackedFilesDialog/0.0.1366.738@0.0.1366.738" timestamp="1613034327745" />
-    <state x="911" y="118" width="525" height="542" key="NewPhpClassDialog" timestamp="1614552022111">
+    <state x="911" y="118" width="525" height="542" key="NewPhpClassDialog" timestamp="1614758847138">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="648" y="84" width="525" height="542" key="NewPhpClassDialog/0.0.1366.738@0.0.1366.738" timestamp="1613749421924" />
-    <state x="911" y="118" key="NewPhpClassDialog/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1614552022111" />
+    <state x="911" y="118" key="NewPhpClassDialog/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1614758847138" />
     <state x="184" y="13" key="SettingsEditor" timestamp="1614258914877">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="184" y="13" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1614258914877" />
-    <state x="387" y="142" key="Vcs.Push.Dialog.v2" timestamp="1614553995791">
+    <state x="387" y="142" key="Vcs.Push.Dialog.v2" timestamp="1614587451051">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="275" y="101" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1614425704874" />
-    <state x="387" y="142" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1614553995791" />
+    <state x="387" y="142" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1614587451051" />
     <state x="777" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1614426539649">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

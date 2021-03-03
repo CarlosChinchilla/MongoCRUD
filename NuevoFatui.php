@@ -1,6 +1,7 @@
 <?php
 require "gestor/modelo/Fatui.php";
 require_once "gestor/dao/FatuiDAO.php";
+require "gestor/modelo/funciones.php";
 
 $fatui = new Fatui();
 
@@ -13,7 +14,7 @@ if(isset($_POST) && !empty($_POST)) {
 
     } else { //insertar nuevo fatui
 
-        $fatui->insertFatui($_POST);
+        $fatui->insertFatui($_POST,$_FILES['imagen']);
 
         header("Location: ListaFatuis.php");
         exit();
@@ -83,6 +84,20 @@ if(isset($_POST) && !empty($_POST)) {
                                        placeholder="Defensa del Fatui" value="0" min="0" onchange=""></li>
                             <li><label>Velocidad: </label><input class="inputs number" type="number" name="velocidad"
                                        placeholder="Velocidad del Fatui" value="0" min="0" onchange=""></li>
+
+                            <li>
+                                <label> Imagen: </label>
+                                <div class="inputfile-box">
+                                    <input type="file" id="file" class="inputfile" name="imagen" onchange='uploadFile(this), validacionFile(this,0)'>
+                                    <label for="file">
+                                        <span id="file-name" class="file-box"></span>
+                                        <span class="file-button">
+                                            <i class="fa fa-upload" aria-hidden="true"></i>
+                                            <img src="img/upload.png">
+                                        </span>
+                                    </label>
+                                </div>
+                            </li>
 
                             <li><button class="button" type="button" value="Enviar"
                                         onclick="validacion()">Crear Fatui</button></li>
