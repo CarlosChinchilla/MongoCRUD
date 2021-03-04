@@ -322,3 +322,8 @@ function editFatuiResponse() {
     }
 }
 
+$(document).keyup(function(event) {
+    if (event.which === 13) {
+        buscarFatui(document.getElementById('busqueda').value);
+    }
+});

@@ -17,6 +17,12 @@ if(isset($_POST['id']) && !empty($_POST['id'])) {
     exit();
 }
 
+if(isset($_GET['busqueda']) && !empty($_GET['busqueda'])) {
+
+    $lista->getListaBusqueda($_GET['busqueda']);
+
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -41,6 +47,10 @@ if(isset($_POST['id']) && !empty($_POST['id'])) {
             </div>
     </div>
 
+    <?php
+    include("includes/login.php");
+    ?>
+
     <div class="main">
 
         <?php
@@ -64,10 +74,10 @@ if(isset($_POST['id']) && !empty($_POST['id'])) {
                     <div class="buscador">
                         <h1>Buscador de <a class="colorAccent">Fatuis</a></h1>
                         <div class="busqueda">
-                            <form id="formBuscar" action="ListaFatuis.php" method="get">
+                            <div id="formBuscar" action="ListaFatuis.php" method="get">
                                 <input class="buscar" type="search" id="busqueda" name="busqueda" placeholder="Nombre de Fatui">
                                 <input class="botBusqueda" type="button" value="Buscar" onclick="buscarFatui(document.getElementById('busqueda').value)">
-                            </form>
+                            </div>
                         </div>
                     </div>
 

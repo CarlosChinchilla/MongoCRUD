@@ -36,6 +36,9 @@ if(isset($_POST) && !empty($_POST)) {
 
 <div class="container">
 
+    <?php
+    include("includes/login.php");
+    ?>
 
     <div class="main">
 

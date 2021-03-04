@@ -252,13 +252,17 @@ html, body{
 }
 
 #login{
-
-    background-color: #ffffff;
     margin: 5px auto;
-    border: 3px solid #FF1D28;
-    width: 25%;
-    min-width: 320px;
-
+    width:25%;
+    padding:3% 2% 2% 2%;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+    min-width:350px;
+    background-color: #444444;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
 }
 
 #cerrrarLogin {
@@ -296,7 +300,7 @@ header img{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    color: #F0F0F0;
+    color: #fff;
     font-weight: bolder;
     font-size: 20px;
     cursor: pointer;
@@ -310,7 +314,12 @@ header img{
 }
 
 #iniciarSesion:hover{
-    color: #FF7300;
+    color: #ff5058;
+    transition: all ease 0.1s;
+}
+
+#iniciarSesion:active{
+    color: #8f0c14;
 }
 
 #userInfo{
@@ -585,7 +594,7 @@ li>label{
 }
 
 #formRest, #formRestEd{
-    width:30%;
+    width:40%;
     padding:3% 2% 2% 2%;
     border-radius: 20px;
     display: flex;
@@ -735,7 +744,7 @@ li>label{
 }
 
 #formRestEdit{
-    width:30%;
+    width:40%;
     padding:3% 2% 2% 2%;
     border-radius: 20px;
     display: flex;
@@ -745,7 +754,6 @@ li>label{
     min-width:500px;
     background-color: #444444;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
-
 }
 
 #formRestEdit>div{

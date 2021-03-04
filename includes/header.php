@@ -8,16 +8,16 @@
     <!-- LOGO -->
     <a href="index.php"><img src="img/logoW.png"></a>
 
-    <!-- INICIAR SESION
+    <!-- INICIAR SESION -->
     <div id="iniciarSesion">
         <span>Iniciar Sesion</span>
         <div class="iconUser"><img class="avatar" src="img/user.png"></div>
-    </div> -->
+    </div>
 
-    <!-- MENU USER
+    <!-- MENU USER -->
     <div id="userInfo">
         <span>Nombre Usuario</span>
         <div class="iconUser"><img class="avatar" src="img/user.png"><img class="messages" src="img/message.png"><img class="arrow" src="img/arrowDown.png"></div>
-    </div> -->
+    </div>
 
 </header>

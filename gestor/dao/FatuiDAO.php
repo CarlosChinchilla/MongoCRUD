@@ -56,7 +56,7 @@ class FatuiDAO
      * @throws \MongoDB\Driver\Exception\Exception
      */
     public function getFatuisBuscar($busqueda){
-        $filter = ['nombre' => $busqueda];
+        $filter = ['nombre' => new MongoDB\BSON\Regex($busqueda)];
         $query = new MongoDB\Driver\Query($filter);
         return $this->connection->executeQuery("Lista.Fatuis", $query);
     }

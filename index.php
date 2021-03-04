@@ -12,11 +12,9 @@
 
 <div class="container">
 
-    <div id="modal">
-        <form id="login">
-            <span id="cerrrarLogin">x</span>
-        </form>
-    </div>
+    <?php
+    include("includes/login.php");
+    ?>
 
     <div class="main">
 
