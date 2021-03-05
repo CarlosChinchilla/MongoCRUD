@@ -39,8 +39,7 @@ if(isset($_GET['busqueda']) && !empty($_GET['busqueda'])) {
 <div class="container">
 
     <div id="modalEdit">
-            <div id="form">
-
+            <div id="formEdit">
                 <form id="formRestEdit" name="editFat" action="<?php echo $_SERVER['PHP_SELF']?>" method="post" enctype="multipart/form-data">
                 </form>
                 <span id="cerrrarEdit">x</span>
@@ -60,8 +59,8 @@ if(isset($_GET['busqueda']) && !empty($_GET['busqueda'])) {
         <nav>
             <ul id="navegadorMain">
                 <li><a id="homeLink" class="notSelected" href="index.php"><img src="img/home.png"><span>INICIO</span></a></li>
-                <li><a id="newLink" class="notSelected" href="NuevoFatui.php"><img src="img/new.png"><span>NUEVO FATUI</span></a></li>
-                <li><a id="listLink" class="selected" href="ListaFatuis.php"><img src="img/trending.png"><span>MIS FATUIS</span></a></li>
+                <li><a id="newLink" class="notSelected" href="NuevoFatui.php"><img src="img/new.png"><span>NUEVO</span></a></li>
+                <li><a id="listLink" class="selected" href="ListaFatuis.php"><img src="img/trending.png"><span>FATUIS</span></a></li>
             </ul>
         </nav>
 

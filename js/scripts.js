@@ -13,7 +13,7 @@ $(document).ready(function(){
     });
 });
 
-//login
+//login/registro
 $(document).ready(function(){
     $("#iniciarSesion").click(function(){
         $("#modal").fadeIn();
@@ -22,6 +22,26 @@ $(document).ready(function(){
 $(document).ready(function(){
     $("#cerrrarLogin").click(function(){
         $("#modal").fadeOut();
+    });
+});
+
+$(document).ready(function(){
+    $("#regButton").click(function(){
+        $("#modal").hide();
+        $("#modalReg").show();
+    });
+});
+
+$(document).ready(function(){
+    $("#logButton").click(function(){
+        $("#modal").show();
+        $("#modalReg").hide();
+    });
+});
+
+$(document).ready(function(){
+    $("#cerrrarReg").click(function(){
+        $("#modalReg").fadeOut();
     });
 });
 

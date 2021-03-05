@@ -327,3 +327,77 @@ $(document).keyup(function(event) {
         buscarFatui(document.getElementById('busqueda').value);
     }
 });
+
+/*-----------------VALIDACION REGISTRO----------------*/
+
+function validacionRegistro(){
+
+    var todoOk = true;
+
+    var formulario = document.getElementsByTagName("reg");
+
+    var datos = reg.getElementsByTagName("input");
+
+    var Vemail=/^(([^<>()\[\]\\.,;:\s@”]+(\.[^<>()\[\]\\.,;:\s@”]+)*)|(“.+”))@((\[[0–9]{1,3}\.[0–9]{1,3}\.[0–9]{1,3}\.[0–9]{1,3}])|(([a-zA-Z\-0–9]+\.)+[a-zA-Z]{2,}))$/;
+
+    //nombre
+    if (datos[1].value == "" || datos[1].value.length >= 15){
+
+        todoOk = false;
+
+        datos[1].style.background = "#FDD4D4";
+
+    }else{
+
+        datos[1].style.background = "#ffffff";
+
+    }
+
+    //email
+    if (datos[2].value == "" || Vemail.test(datos[2].value)==false){
+
+        todoOk = false;
+
+        datos[2].style.background = "#FDD4D4";
+
+    }else{
+
+        datos[2].style.background = "#ffffff";
+
+    }
+
+    //password
+    if (datos[3].value == "" || datos[3].value.length >= 15){
+
+        todoOk = false;
+
+        datos[3].style.background = "#FDD4D4";
+
+    }else{
+
+        datos[3].style.background = "#ffffff";
+
+    }
+
+    //rep password
+    if (datos[3].value != datos[4].value){
+
+        todoOk = false;
+
+        datos[4].style.background = "#FDD4D4";
+
+    }else{
+
+        datos[4].style.background = "#ffffff";
+
+    }
+
+    if(todoOk){
+
+        //submit
+        document.getElementById('reg').submit();
+
+    }else{
+        alert("Error: Existen campos con datos erroneos o vacíos");
+    }
+}

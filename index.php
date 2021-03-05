@@ -25,8 +25,8 @@
         <nav>
             <ul id="navegadorMain">
                 <li><a id="homeLink" class="selected" href="index.php"><img src="img/home.png"><span>INICIO</span></a></li>
-                <li><a id="newLink" class="notSelected" href="NuevoFatui.php"><img src="img/new.png"><span>NUEVO FATUI</span></a></li>
-                <li><a id="listLink" class="notSelected" href="ListaFatuis.php"><img src="img/trending.png"><span>MIS FATUIS</span></a></li>
+                <li><a id="newLink" class="notSelected" href="NuevoFatui.php"><img src="img/new.png"><span>NUEVO</span></a></li>
+                <li><a id="listLink" class="notSelected" href="ListaFatuis.php"><img src="img/trending.png"><span>FATUIS</span></a></li>
             </ul>
         </nav>
 

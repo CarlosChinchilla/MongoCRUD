@@ -81,5 +81,4 @@ class FatuiDAO
         $bulk->update($filter, $collation);
         $this->connection->executeBulkWrite("Lista.Fatuis", $bulk);
     }
-
 }

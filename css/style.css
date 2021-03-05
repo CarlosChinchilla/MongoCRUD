@@ -237,7 +237,7 @@ html, body{
 }
 
 /*VENTANA EMERGENTE LOGIN*/
-#modal{
+#modal, #modalReg{
     display: none;
     position: fixed;
     z-index: 120;
@@ -251,13 +251,12 @@ html, body{
     padding-top: 60px;
 }
 
-#login{
-    margin: 5px auto;
+#login, #reg{
     width:25%;
     padding:3% 2% 2% 2%;
     border-radius: 20px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     text-align: center;
     min-width:350px;
@@ -265,7 +264,48 @@ html, body{
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
 }
 
-#cerrrarLogin {
+#login>img, #reg>img{
+    margin-bottom: 20px;
+}
+
+#login>h1, #reg>h1{
+    color: #F0F0F0;
+}
+
+.registrate{
+    margin: 15px 0 15px 0;
+}
+
+.registrate h3{
+    color: #F0F0F0;
+    margin-bottom: 7px;
+}
+
+.registrate a{
+    color: #FF1D28;
+    cursor: pointer;
+    margin: 10px;
+    font-weight: bold;
+}
+
+.registrate a:hover{
+    color: #ff5058;
+    transition: all ease 0.1s;
+}
+
+.registrate a:active{
+    color: #8f0c14;
+}
+
+
+#login>ul, #reg>ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+#cerrrarLogin, #cerrrarReg {
     position: relative;
     right: 0;
     top: 0;
@@ -555,14 +595,14 @@ footer img{
     color: #F0F0F0;
 }
 
-#form{
+#form, #formEdit, #formLogin, #formReg{
     display: flex;
     flex-direction: row;
     justify-content: center;
     text-align: center;
 }
 
-#form ul{
+#form ul, #formEdit ul{
     list-style: none;
     padding: 0;
     margin: 0;
@@ -611,11 +651,12 @@ li>label{
     width: 200px;
     height: 100%;
     display: flex;
+    margin: auto;
     flex-direction: column;
     justify-content: center;
 }
 
-#formRest label, #formRestEd label{
+#formRest label, #formRestEd label, #formLogin label, #formReg label{
     color: #FF1D28;
 }
 
@@ -760,6 +801,7 @@ li>label{
     width: 200px;
     height: 100%;
     display: flex;
+    margin: auto;
     flex-direction: column;
     justify-content: center;
 }
@@ -768,7 +810,7 @@ li>label{
     color: #FF1D28;
 }
 
-#cerrrarEdit {
+#cerrrarEdit, #cerrrarLogin, #cerrrarReg {
     position: relative;
     height: 45px;
     right: 40px;
@@ -779,12 +821,12 @@ li>label{
     color: #FF1D28;
 }
 
-#cerrrarEdit:hover{
+#cerrrarEdit:hover, #cerrrarLogin:hover, #cerrrarReg:hover {
     color: #ff5058;
     transition: all ease 0.1s;
 }
 
-#cerrrarEdit:active{
+#cerrrarEdit:active, #cerrrarLogin:active, #cerrrarReg:active {
     color: #8f0c14;
 }
 
