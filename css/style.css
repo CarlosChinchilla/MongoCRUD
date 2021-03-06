@@ -168,7 +168,7 @@
         width: 100% !important;
     }
 
-    .fatuiEnter{
+    .fatuiEnter,.fatuiEnterBot{
         width: 100% !important;
         height: auto !important;
         flex-direction: column !important;
