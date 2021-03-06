@@ -62,6 +62,9 @@ if(isset($_GET['busqueda']) && !empty($_GET['busqueda'])) {
                 <li><a id="newLink" class="notSelected" href="NuevoFatui.php"><img src="img/new.png"><span>NUEVO</span></a></li>
                 <li><a id="listLink" class="selected" href="ListaFatuis.php"><img src="img/trending.png"><span>FATUIS</span></a></li>
             </ul>
+            <?php
+            include("includes/navUser.php");
+            ?>
         </nav>
 
         <section>

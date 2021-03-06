@@ -11,6 +11,27 @@ if(isset($_POST) && !empty($_POST)) {
 
     }
 }
+if (isset($_POST['login']) && !empty($_POST['login'])) {
+
+    $email = addslashes($_POST['email']);
+    $password = addslashes($_POST['password']);
+
+    if ($usuario->comprobarLogin($email, $password)) {
+        //el usuario existe
+        session_start();
+        $_SESSION['id'] = $usuario->getId();
+        $_SESSION['nombre'] = $usuario->getNombre();
+        $_SESSION['email'] = $usuario->getEmail();
+        $_SESSION['permisos'] = $usuario->getPermisos();
+        session_write_close();
+
+        echo ("<script> alert('Bienvenido '" . $_SESSION['nombre'] ."); </script>");
+
+        header('Location: index.php');
+    }else{
+        echo ("<script> alert('Error: No existe esa combinaciín de email/contraseña.'); </script>");
+    }
+}
 ?>
 
 <div id="modal">
@@ -37,7 +58,7 @@ if(isset($_POST) && !empty($_POST)) {
                 <li><input type='hidden' name='login' value="1"></li>
 
                 <li><button class='button' type='button' value='Editar'
-                            onclick='tryLogin()'>Iniciar sesión</button></li>
+                            onclick='validacionLogin()'>Iniciar sesión</button></li>
             </ul>
 
         </form>

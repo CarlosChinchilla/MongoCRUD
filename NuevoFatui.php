@@ -51,6 +51,9 @@ if(isset($_POST) && !empty($_POST)) {
                 <li><a id="newLink" class="selected" href="NuevoFatui.php"><img src="img/new.png"><span>NUEVO</span></a></li>
                 <li><a id="listLink" class="notSelected" href="ListaFatuis.php"><img src="img/trending.png"><span>FATUIS</span></a></li>
             </ul>
+            <?php
+            include("includes/navUser.php");
+            ?>
         </nav>
 
         <section>

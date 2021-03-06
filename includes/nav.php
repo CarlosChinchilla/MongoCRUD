@@ -4,11 +4,9 @@
         <li><a id="newLink" class="notSelected" href="NuevoFatui.php"><img src="img/new.png"><span>NUEVO FATUI</span></a></li>
         <li><a id="listLink" class="notSelected" href="ListaFatuis.php"><img src="img/trending.png"><span>FATUIS</span></a></li>
     </ul>
-    <!--
+
     <ul id="navegadorUser">
-        <li><a class="subir notSelected" href=""><img src="img/upload.png"><span>SUBIR ARTE</span></a></li>
-        <li><a class="notSelected" href=""><img src="img/com.png"><span>ENCARGOS</span></a></li>
-        <li><a class="notSelected" href=""><img src="img/gal.png"><span>GALERIA</span></a></li>
+        <li><a class="notSelected" href=""><img src="img/upload.png"><span>CERRAR SESIÓN</span></a></li>
     </ul>
-    -->
+
 </nav>

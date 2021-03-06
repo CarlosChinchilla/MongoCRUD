@@ -132,4 +132,18 @@ class Usuario
         return false;
     }
 
+    public function comprobarLogin($email, $password){
+        $rows = UsuarioDAO::getInstance()->comprobarUsuario($email, $password);
+        foreach ($rows as $document) {
+            $usuario = json_decode(json_encode($document),true);
+            $this->id = implode($usuario["_id"]);
+            $this->setNombre($usuario["nombre"]);
+            $this->setEmail($usuario["email"]);
+            $this->setPassword($usuario["password"]);
+            $this->setPermisos($usuario["permisos"]);
+            return true;
+        }
+        return false;
+    }
+
 }

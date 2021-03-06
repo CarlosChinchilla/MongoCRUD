@@ -1,3 +1,9 @@
+<?php
+
+session_start();
+
+?>
+
 <header>
 
     <!-- MENU VISTA MOVIL -->
@@ -8,16 +14,23 @@
     <!-- LOGO -->
     <a href="index.php"><img src="img/logoW.png"></a>
 
-    <!-- INICIAR SESION -->
-    <div id="iniciarSesion">
-        <span>Iniciar Sesion</span>
-        <div class="iconUser"><img class="avatar" src="img/user.png"></div>
-    </div>
+    <?php
 
-    <!-- MENU USER -->
-    <div id="userInfo">
-        <span>Nombre Usuario</span>
-        <div class="iconUser"><img class="avatar" src="img/user.png"><img class="messages" src="img/message.png"><img class="arrow" src="img/arrowDown.png"></div>
-    </div>
+    if (empty($_SESSION['nombre'])) {
+
+        echo ("<!-- INICIAR SESION -->
+                <div id='iniciarSesion'>
+                    <span>Iniciar Sesion</span>
+                    <div class='iconUser'><img class='avatar' src='img/user.png'></div>
+                </div>");
+
+    }else{
+        echo ("<!-- MENU USER -->
+                <div id='userInfo'>
+                    <span>". $_SESSION['nombre'] ."</span>
+                    <div class='iconUser'><img class='avatar' src='img/fatuiI.png'></div>
+                </div>");
+    }
+    ?>
 
 </header>

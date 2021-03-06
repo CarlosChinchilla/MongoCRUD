@@ -401,3 +401,52 @@ function validacionRegistro(){
         alert("Error: Existen campos con datos erroneos o vacíos");
     }
 }
+
+/*-----------------VALIDACION REGISTRO----------------*/
+
+function validacionLogin(){
+
+    var todoOk = true;
+
+    var formulario = document.getElementsByTagName("login");
+
+    var datos = login.getElementsByTagName("input");
+
+    var Vemail=/^(([^<>()\[\]\\.,;:\s@”]+(\.[^<>()\[\]\\.,;:\s@”]+)*)|(“.+”))@((\[[0–9]{1,3}\.[0–9]{1,3}\.[0–9]{1,3}\.[0–9]{1,3}])|(([a-zA-Z\-0–9]+\.)+[a-zA-Z]{2,}))$/;
+
+
+    //email
+    if (datos[1].value == "" || Vemail.test(datos[1].value)==false){
+
+        todoOk = false;
+
+        datos[1].style.background = "#FDD4D4";
+
+    }else{
+
+        datos[1].style.background = "#ffffff";
+
+    }
+
+    //password
+    if (datos[2].value == "" || datos[2].value.length >= 15){
+
+        todoOk = false;
+
+        datos[2].style.background = "#FDD4D4";
+
+    }else{
+
+        datos[2].style.background = "#ffffff";
+
+    }
+
+    if(todoOk){
+
+        //submit
+        document.getElementById('login').submit();
+
+    }else{
+        alert("Error: Datos incorrecto");
+    }
+}
