@@ -11,6 +11,7 @@ class Fatui
     private $tipo;
     private $imagen;
     private $carpeta;
+    private $idUsu;
 
     /**
      * Fatui constructor.
@@ -20,8 +21,9 @@ class Fatui
      * @param $defensa
      * @param $velocidad
      * @param $tipo
+     * @param $idUsu
      */
-    public function __construct($id="", $nombre = "", $tipo = "", $ataque = "", $defensa = "", $velocidad = "", $imagen = "", $carpeta="")
+    public function __construct($id="", $nombre = "", $tipo = "", $ataque = "", $defensa = "", $velocidad = "", $imagen = "", $carpeta="", $idUsu="")
     {
         $this->id = $id;
         $this->nombre = $nombre;
@@ -31,6 +33,7 @@ class Fatui
         $this->velocidad = $velocidad;
         $this->imagen = $imagen;
         $this->carpeta = "fatuis/";
+        $this->idUsu = $idUsu;
     }
 
     /**
@@ -166,6 +169,22 @@ class Fatui
         $this->carpeta = $carpeta;
     }
 
+    /**
+     * @return mixed|string
+     */
+    public function getIdUsu()
+    {
+        return $this->idUsu;
+    }
+
+    /**
+     * @param mixed|string $idUsu
+     */
+    public function setIdUsu($idUsu)
+    {
+        $this->idUsu = $idUsu;
+    }
+
     public function validacionFatui($datos){
         $this->setNombre(addslashes($datos['nombre']));
         $this->setTipo(addslashes($datos['tipo']));
@@ -184,13 +203,15 @@ class Fatui
     }
 
 
-    public function insertFatui($fatui,$imagen)
+    public function insertFatui($fatui,$imagen,$ideUsu)
     {
         $this->validacionFatui($fatui);
 
         $ruta = subirFoto($imagen, $this->carpeta);
 
         $this->setImagen($ruta);
+
+        $this->setIdUsu($ideUsu);
 
         FatuiDAO::getInstance()->insertFatui($this);
     }
@@ -206,9 +227,10 @@ class Fatui
     {
         $this->validacionFatuiId($fatui);
 
-        $ruta = subirFoto($imagen, $this->carpeta);
-
-        $this->setImagen($ruta);
+        if($imagen!=""){
+            $ruta = subirFoto($imagen, $this->carpeta);
+            $this->setImagen($ruta);
+        }
 
         FatuiDAO::getInstance()->updateFatui($this);
     }
@@ -234,13 +256,42 @@ class Fatui
                                     <p>Velocidad: </p> <label>".$this->velocidad."</label>
                                 </div>
                             </div>
+                        </div>";
+
+        return $html;
+
+    }
+
+    public function imprimirEntradaPorId(){
+
+        $idUsu = $_SESSION['id'];
+
+        if($this->imagen == null){
+            $this->imagen = "noImage.png";
+        }
+
+        $html = "";
+
+        $html .= "<div class='fatuiEnterBot'>
+                            <div class='imageFatui'><img src='". $this->carpeta . $this->imagen . "'></div>
+                            <div class='dataFatui'>
+                                <div class='dataTop'>
+                                    <p>Nombre: </p> <label>".$this->nombre."</label>
+                                    <p>Tipo: </p> <label>".$this->tipo."</label>
+                                </div>
+                                <div class='dataBot'>
+                                    <p>Ataque: </p> <label>".$this->ataque."</label>
+                                    <p>Defensa: </p> <label>".$this->defensa."</label>
+                                    <p>Velocidad: </p> <label>".$this->velocidad."</label>
+                                </div>
+                            </div>
                             <div class='botones'>
 
                                 <button class='button bList editButton' type='button' value='Editar'
                                         onclick='abrirEditar(`". $this->id ."`)'>Editar</button>
 
                                 <button class='button bList' type='button' value='Eliminar'
-                                        onclick='borrarFatui(`". $this->id ."`, `". $this->carpeta ."`,`". $this->imagen ."`)'>Eliminar</button>
+                                        onclick='borrarFatui(`". $this->id ."`, `". $this->carpeta ."`,`". $this->imagen ."`,`". $idUsu ."`)'>Eliminar</button>
                             </div>
                         </div>";
 

@@ -8,14 +8,14 @@ session_start();
 
 $fatui = new Fatui();
 $lista = new ListaFatuis();
-$lista->getLista();
+$lista->getListaIdUsu($_SESSION['id']);
 
 
 if(isset($_POST['id']) && !empty($_POST['id'])) {
 
     $fatui->updateFatui($_POST,$_FILES['imagen']);
 
-    header("Location: ListaFatuis.php");
+    header("Location: MisFatuis.php");
     exit();
 }
 
@@ -40,6 +40,14 @@ if(isset($_GET['busqueda']) && !empty($_GET['busqueda'])) {
 
 <div class="container">
 
+    <div id="modalEdit">
+        <div id="formEdit">
+            <form id="formRestEdit" name="editFat" action="<?php echo $_SERVER['PHP_SELF']?>" method="post" enctype="multipart/form-data">
+            </form>
+            <span id="cerrrarEdit">x</span>
+        </div>
+    </div>
+
     <?php
     include("includes/login.php");
     ?>
@@ -54,10 +62,10 @@ if(isset($_GET['busqueda']) && !empty($_GET['busqueda'])) {
             <ul id="navegadorMain">
                 <li><a id="homeLink" class="notSelected" href="index.php"><img src="img/home.png"><span>INICIO</span></a></li>
                 <li><a id="newLink" class="notSelected" href="NuevoFatui.php"><img src="img/new.png"><span>NUEVO</span></a></li>
-                <li><a id="listLink" class="selected" href="ListaFatuis.php"><img src="img/trending.png"><span>FATUIS</span></a></li>
+                <li><a id="listLink" class="notSelected" href="ListaFatuis.php"><img src="img/trending.png"><span>FATUIS</span></a></li>
                 <?php
                 if(!empty($_SESSION['nombre'])){
-                    echo("<li><a id='listLink' class='notSelected' href='MisFatuis.php'><img src='img/misfat.png'><span>MIS FATUI</span></a></li>");
+                    echo("<li><a id='listLink' class='selected' href='MisFatuis.php'><img src='img/misfat.png'><span>MIS FATUI</span></a></li>");
                 }
                 ?>
             </ul>
@@ -68,26 +76,24 @@ if(isset($_GET['busqueda']) && !empty($_GET['busqueda'])) {
 
         <section>
 
-            <div id="contenidoList">
+            <div id="contenidoMyList">
 
-                <div id="contenidoPaginaLista">
+                <div id="contenidoPaginaMiLista">
 
                     <div class="buscador">
                         <h1>Buscador de <a class="colorAccent">Fatuis</a></h1>
                         <div class="busqueda">
                             <div id="formBuscar">
-                                <input class="buscar" type="search" id="busqueda" name="busqueda" placeholder="Nombre de Fatui">
-                                <input class="botBusqueda" type="button" value="Buscar" onclick="buscarFatui(document.getElementById('busqueda').value)">
+                                <input class="buscar" type="search" id="mibusqueda" name="mibusqueda" placeholder="Nombre de Fatui">
+                                <input class="botBusqueda" type="button" value="Buscar" onclick="buscarFatuiIdUsu(document.getElementById('mibusqueda').value,'<?php echo ($_SESSION['id']); ?>')">
                             </div>
                         </div>
                     </div>
 
-                    <div id="listaFatuis">
+                    <div id="listaMisFatuis">
 
                         <?php
-
-                        echo ($lista->imprimirLista());
-
+                        echo ($lista->imprimirListaMisFatuis());
                         ?>
 
                     </div>

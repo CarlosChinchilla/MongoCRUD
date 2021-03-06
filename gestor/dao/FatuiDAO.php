@@ -27,7 +27,7 @@ class FatuiDAO
      */
     public function insertFatui($fatui){
         $bulk = new MongoDB\Driver\BulkWrite;
-        $bulk->insert(['nombre' => $fatui->getNombre(), 'tipo' => $fatui->getTipo(), 'ataque' => $fatui->getAtaque(), 'defensa' => $fatui->getDefensa(), 'velocidad' => $fatui->getVelocidad(), 'imagen' => $fatui->getImagen()]);
+        $bulk->insert(['nombre' => $fatui->getNombre(), 'tipo' => $fatui->getTipo(), 'ataque' => $fatui->getAtaque(), 'defensa' => $fatui->getDefensa(), 'velocidad' => $fatui->getVelocidad(), 'imagen' => $fatui->getImagen(), 'idUsu' => $fatui->getIdUsu()]);
         $this->connection->executeBulkWrite("Lista.Fatuis", $bulk);
     }
 
@@ -65,8 +65,28 @@ class FatuiDAO
      * @return \MongoDB\Driver\Cursor
      * @throws \MongoDB\Driver\Exception\Exception
      */
+    public function getFatuisBuscarByIdUsu($busqueda,$idUsu){
+        $filter = ['nombre' => new MongoDB\BSON\Regex($busqueda),'idUsu' => $idUsu];
+        $query = new MongoDB\Driver\Query($filter);
+        return $this->connection->executeQuery("Lista.Fatuis", $query);
+    }
+
+    /**
+     * @return \MongoDB\Driver\Cursor
+     * @throws \MongoDB\Driver\Exception\Exception
+     */
     public function getFatuibyId($id){
         $filter = ['_id' => new MongoDB\BSON\ObjectId($id)];
+        $query = new MongoDB\Driver\Query($filter);
+        return $this->connection->executeQuery("Lista.Fatuis", $query);
+    }
+
+    /**
+     * @return \MongoDB\Driver\Cursor
+     * @throws \MongoDB\Driver\Exception\Exception
+     */
+    public function getFatuibyIdUsu($idusu){
+        $filter = ['idUsu' => $idusu];
         $query = new MongoDB\Driver\Query($filter);
         return $this->connection->executeQuery("Lista.Fatuis", $query);
     }
@@ -77,7 +97,11 @@ class FatuiDAO
     public function updateFatui($fatui){
         $bulk = new MongoDB\Driver\BulkWrite;
         $filter = ['_id' => new MongoDB\BSON\ObjectId($fatui->getId())];
-        $collation = ['$set' => ['nombre' => $fatui->getNombre(), 'tipo' => $fatui->getTipo(), 'ataque' => $fatui->getAtaque(), 'defensa' => $fatui->getDefensa(), 'velocidad' => $fatui->getVelocidad(), 'imagen' => $fatui->getImagen()]];
+        if($fatui->getImagen() != ""){
+            $collation = ['$set' => ['nombre' => $fatui->getNombre(), 'tipo' => $fatui->getTipo(), 'ataque' => $fatui->getAtaque(), 'defensa' => $fatui->getDefensa(), 'velocidad' => $fatui->getVelocidad(), 'imagen' => $fatui->getImagen()]];
+        }else{
+            $collation = ['$set' => ['nombre' => $fatui->getNombre(), 'tipo' => $fatui->getTipo(), 'ataque' => $fatui->getAtaque(), 'defensa' => $fatui->getDefensa(), 'velocidad' => $fatui->getVelocidad()]];
+        }
         $bulk->update($filter, $collation);
         $this->connection->executeBulkWrite("Lista.Fatuis", $bulk);
     }

@@ -177,18 +177,6 @@ function validacionEditar(id){
 
     }
 
-    if (datos[5].value == ""){
-
-        todoOk = false;
-
-        file.style.background = "#FDD4D4";
-
-    }else{
-
-        file.style.background = "#ffffff";
-
-    }
-
     if(todoOk){
 
         //submit
@@ -243,13 +231,13 @@ function ajax() {
 //--------------Borrar fatui
 
 var borrar = new ajax();
-function borrarFatui(id,carpeta,imagen) {
+function borrarFatui(id,carpeta,imagen,idUsu) {
 
     if(confirm("¿Desea eliminar el Fatui seleccionado?")) {
         var myurl = 'gestor/llamadas/borrarFatui.php';
         myRand = parseInt(Math.random() * 999999999999999);
         //alert(id);
-        modurl = myurl + '?rand=' + myRand + '&id=' + id + '&carpeta=' + carpeta + '&imagen=' + imagen;
+        modurl = myurl + '?rand=' + myRand + '&id=' + id + '&carpeta=' + carpeta + '&imagen=' + imagen + '&idUsu=' + idUsu;
         borrar.open("GET", modurl, true);
         borrar.onreadystatechange = borrarFatuiResponse;
         borrar.send(null);
@@ -263,7 +251,7 @@ function borrarFatuiResponse() {
 
             var listaFatuis = borrar.responseText;
 
-            document.getElementById('listaFatuis').innerHTML =  listaFatuis;
+            document.getElementById('listaMisFatuis').innerHTML =  listaFatuis;
         }
     }
 }
@@ -295,6 +283,33 @@ function buscarFatuiResponse() {
     }
 }
 
+//--------------Buscar fatui ID usu
+
+var buscarIdUsu = new ajax();
+function buscarFatuiIdUsu(busqueda) {
+
+    var myurl = 'gestor/llamadas/buscarFatuiIdUsu.php';
+    myRand = parseInt(Math.random() * 999999999999999);
+    //alert(id);
+    modurl = myurl + '?rand=' + myRand + '&busqueda=' + busqueda;
+    buscarIdUsu.open("GET", modurl, true);
+    buscarIdUsu.onreadystatechange = buscarFatuiIdUsuResponse;
+    buscarIdUsu.send(null);
+
+}
+
+function buscarFatuiIdUsuResponse() {
+
+    if (buscarIdUsu.readyState == 4) {
+        if(buscarIdUsu.status == 200) {
+
+            var listaFatuis = buscarIdUsu.responseText;
+
+            document.getElementById('listaMisFatuis').innerHTML =  listaFatuis;
+        }
+    }
+}
+
 //--------------Editar fatui Ventana
 
 var editar = new ajax();
@@ -322,10 +337,19 @@ function editFatuiResponse() {
     }
 }
 
-$(document).keyup(function(event) {
-    if (event.which === 13) {
-        buscarFatui(document.getElementById('busqueda').value);
-    }
+$(document).ready(function() {
+
+    $("#busqueda").keypress(function(event) {
+        if (event.which === 13) {
+            buscarFatui(document.getElementById('busqueda').value);
+        }
+    });
+
+    $("#mibusqueda").on('keypress', function (e) {
+        if (e.which == 13) {
+            buscarFatuiIdUsu(document.getElementById('mibusqueda').value);
+        }
+    });
 });
 
 /*-----------------VALIDACION REGISTRO----------------*/

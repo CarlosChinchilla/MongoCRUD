@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -27,6 +31,11 @@
                 <li><a id="homeLink" class="selected" href="index.php"><img src="img/home.png"><span>INICIO</span></a></li>
                 <li><a id="newLink" class="notSelected" href="NuevoFatui.php"><img src="img/new.png"><span>NUEVO</span></a></li>
                 <li><a id="listLink" class="notSelected" href="ListaFatuis.php"><img src="img/trending.png"><span>FATUIS</span></a></li>
+                <?php
+                if(!empty($_SESSION['nombre'])){
+                    echo("<li><a id='listLink' class='notSelected' href='MisFatuis.php'><img src='img/misfat.png'><span>MIS FATUI</span></a></li>");
+                }
+                ?>
             </ul>
             <?php
             include("includes/navUser.php");

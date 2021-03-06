@@ -3,6 +3,8 @@ require "gestor/modelo/Fatui.php";
 require_once "gestor/dao/FatuiDAO.php";
 require "gestor/modelo/funciones.php";
 
+session_start();
+
 $fatui = new Fatui();
 
 if(isset($_POST) && !empty($_POST)) {
@@ -13,9 +15,9 @@ if(isset($_POST) && !empty($_POST)) {
 
     } else { //insertar nuevo fatui
 
-        $fatui->insertFatui($_POST,$_FILES['imagen']);
+        $fatui->insertFatui($_POST,$_FILES['imagen'],$_SESSION['id']);
 
-        header("Location: ListaFatuis.php");
+        header("Location: MisFatuis.php");
         exit();
 
     }
@@ -50,6 +52,11 @@ if(isset($_POST) && !empty($_POST)) {
                 <li><a id="homeLink" class="notSelected" href="index.php"><img src="img/home.png"><span>INICIO</span></a></li>
                 <li><a id="newLink" class="selected" href="NuevoFatui.php"><img src="img/new.png"><span>NUEVO</span></a></li>
                 <li><a id="listLink" class="notSelected" href="ListaFatuis.php"><img src="img/trending.png"><span>FATUIS</span></a></li>
+                <?php
+                if(!empty($_SESSION['nombre'])){
+                    echo("<li><a id='listLink' class='notSelected' href='MisFatuis.php'><img src='img/misfat.png'><span>MIS FATUI</span></a></li>");
+                }
+                ?>
             </ul>
             <?php
             include("includes/navUser.php");
