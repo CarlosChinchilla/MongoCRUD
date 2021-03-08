@@ -28,7 +28,7 @@ if(isset($_POST) && !empty($_POST)) {
     $mail->Host = 'smtp.gmail.com';
     $mail->Port = 587;
     $mail->Username = 'galeriart.info@gmail.com';
-    $mail->Password = 'foaoqesvcduxnrdg';
+    $mail->Password = '';
 
     $mail->isHTML(true);
 
