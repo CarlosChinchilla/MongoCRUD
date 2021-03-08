@@ -207,6 +207,9 @@
         width: 85% !important;
     }
 
+    #formularioEnviar{
+        width: 100% !important;
+    }
 
     /*------------------------*/
 
@@ -983,4 +986,44 @@ span img{
     float: left;
     width: 30px;
     padding: 0px 5px 0px 8px;
+}
+
+/*---------SEND FATUI--------*/
+
+#contenidoSend{
+    margin-top: 120px;
+    margin-bottom: 50px;
+}
+
+#contenidoSend>h1{
+    margin-bottom: 20px;
+    color: #F0F0F0;
+}
+
+#formularioEnviar{
+    margin: auto;
+    width: 900px;
+}
+
+#formularioEnviar ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#formularioEnviar li{
+    margin: 15px 0 15px 0;
+}
+
+#formularioEnviar label{
+    color: #FF1D28;
+    font-weight: bold;
+}
+
+#formularioEnviar>li>button{
+    margin-top: 25px;
+}
+
+.ck-editor__editable_inline {
+    min-height: 200px;
 }

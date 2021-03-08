@@ -474,3 +474,39 @@ function validacionLogin(){
         alert("Error: Datos incorrecto");
     }
 }
+
+/*-----------------VALIDACION SEND FATUI----------------*/
+
+function validacionEnviar(){
+
+    var todoOk = true;
+
+    var formulario = document.getElementsByTagName("formularioEnviar");
+
+    var datos = formularioEnviar.getElementsByTagName("input");
+
+    var Vemail=/^(([^<>()\[\]\\.,;:\s@”]+(\.[^<>()\[\]\\.,;:\s@”]+)*)|(“.+”))@((\[[0–9]{1,3}\.[0–9]{1,3}\.[0–9]{1,3}\.[0–9]{1,3}])|(([a-zA-Z\-0–9]+\.)+[a-zA-Z]{2,}))$/;
+
+
+    //email
+    if (datos[0].value == "" || Vemail.test(datos[0].value)==false){
+
+        todoOk = false;
+
+        datos[0].style.background = "#FDD4D4";
+
+    }else{
+
+        datos[0].style.background = "#ffffff";
+
+    }
+
+    if(todoOk){
+
+        //submit
+        document.getElementById('formularioEnviar').submit();
+
+    }else{
+        alert("Error: Email incorrecto");
+    }
+}

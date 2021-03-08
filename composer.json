@@ -2,6 +2,7 @@
     "require": {
         "mongodb/mongodb": "^1.8",
         "myclabs/php-enum": "^1.7",
+        "phpmailer/phpmailer": "^6.2",
         "ext-mongodb": "*",
       "ext-json": "*"
     }
