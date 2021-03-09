@@ -1,0 +1,8 @@
+{
+    "nombre": "Relicario",
+    "ataque": "15",
+    "defensa": "50",
+    "velocidad": "15",
+    "tipo": "Sagrado",
+    "imagen": "ESQUELETO2.png"
+}

@@ -2,12 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c21cefd2-6aae-4856-972f-44cf596941ab" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/jsonfatui/Diablillo.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jsonfatui/Ente Oscuro.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gestor/llamadas/ddFatui.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jsonfatui/Ente Luminoso.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jsonfatui/Relicario.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MisFatuis.php" beforeDir="false" afterPath="$PROJECT_DIR$/MisFatuis.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gestor/js/scripts.js" beforeDir="false" afterPath="$PROJECT_DIR$/gestor/js/scripts.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gestor/modelo/Fatui.php" beforeDir="false" afterPath="$PROJECT_DIR$/gestor/modelo/Fatui.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/navUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/navUser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jsonfatui/Diablillo.json" beforeDir="false" afterPath="$PROJECT_DIR$/jsonfatui/Diablillo.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jsonfatui/Ente Oscuro.json" beforeDir="false" afterPath="$PROJECT_DIR$/jsonfatui/Ente Oscuro.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sendFatui.php" beforeDir="false" afterPath="$PROJECT_DIR$/sendFatui.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -98,7 +101,7 @@
       <workItem from="1615029173023" duration="26645000" />
       <workItem from="1615204496976" duration="11027000" />
       <workItem from="1615218027925" duration="680000" />
-      <workItem from="1615287910210" duration="5600000" />
+      <workItem from="1615287910210" duration="16813000" />
     </task>
     <task id="LOCAL-00001" summary="commit front">
       <created>1613759799371</created>
@@ -205,7 +208,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615218049844</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="ENVIO MENSAJES CON IMAGEN Y JSON">
+      <created>1615293673904</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1615293673904</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -228,7 +238,8 @@
     <MESSAGE value="FINAL" />
     <MESSAGE value="ENVIO MENSAJES" />
     <MESSAGE value="ENVIO MENSAJES NP" />
-    <option name="LAST_COMMIT_MESSAGE" value="ENVIO MENSAJES NP" />
+    <MESSAGE value="ENVIO MENSAJES CON IMAGEN Y JSON" />
+    <option name="LAST_COMMIT_MESSAGE" value="ENVIO MENSAJES CON IMAGEN Y JSON" />
   </component>
   <component name="WindowStateProjectService">
     <state x="586" y="198" key="#Inspections" timestamp="1615206987914">
@@ -248,11 +259,11 @@
     </state>
     <state x="488" y="84" key="#com.intellij.ide.util.MemberChooser/0.0.1366.738@0.0.1366.738" timestamp="1613650964628" />
     <state x="686" y="118" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1615292238115" />
-    <state x="277" y="0" key="CommitChangelistDialog2" timestamp="1615218049252">
+    <state x="277" y="0" key="CommitChangelistDialog2" timestamp="1615293673100">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="197" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1614426288842" />
-    <state x="277" y="0" key="CommitChangelistDialog2/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1615218049252" />
+    <state x="277" y="0" key="CommitChangelistDialog2/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1615293673100" />
     <state x="736" y="432" width="447" height="266" key="ComposerInitDialogKey" timestamp="1615207177077">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -279,21 +290,21 @@
     </state>
     <state x="648" y="84" width="525" height="542" key="NewPhpClassDialog/0.0.1366.738@0.0.1366.738" timestamp="1614858672083" />
     <state x="911" y="118" key="NewPhpClassDialog/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1614980246059" />
-    <state x="727" y="411" key="NewPhpFileDialog" timestamp="1615205071398">
+    <state x="727" y="411" key="NewPhpFileDialog" timestamp="1615309831138">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="517" y="292" key="NewPhpFileDialog/0.0.1366.738@0.0.1366.738" timestamp="1614858678641" />
-    <state x="727" y="411" key="NewPhpFileDialog/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1615205071398" />
+    <state x="727" y="411" key="NewPhpFileDialog/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1615309831138" />
     <state x="259" y="18" key="SettingsEditor" timestamp="1614976160995">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="184" y="13" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1614258914877" />
     <state x="259" y="18" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1614976160995" />
-    <state x="387" y="142" key="Vcs.Push.Dialog.v2" timestamp="1615218054854">
+    <state x="387" y="142" key="Vcs.Push.Dialog.v2" timestamp="1615293679202">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="275" y="101" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1614425704874" />
-    <state x="387" y="142" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1615218054854" />
+    <state x="387" y="142" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1615293679202" />
     <state x="777" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1614426539649">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

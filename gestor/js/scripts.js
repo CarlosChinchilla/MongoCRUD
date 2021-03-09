@@ -510,3 +510,32 @@ function validacionEnviar(){
         alert("Error: Email incorrecto");
     }
 }
+
+//--------------Descargar Fatui AJAX
+
+var descargar = new ajax();
+function ddFatui(id) {
+
+    var myurl = 'gestor/llamadas/ddFatui.php';
+    myRand = parseInt(Math.random() * 999999999999999);
+    //alert(id);
+    modurl = myurl + '?rand=' + myRand + '&id=' + id;
+    descargar.open("GET", modurl, true);
+    descargar.onreadystatechange = ddFatuiResponse;
+    descargar.send(null);
+
+}
+
+function ddFatuiResponse() {
+
+    if (descargar.readyState == 4) {
+        if(descargar.status == 200) {
+
+            var ddFatui = descargar.responseText;
+            var link = document.createElement("a");
+            link.download = name;
+            link.href = ddFatui;
+            link.click();
+        }
+    }
+}

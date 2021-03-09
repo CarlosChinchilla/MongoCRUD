@@ -1,0 +1,8 @@
+{
+    "nombre": "Ente Luminoso",
+    "ataque": "25",
+    "defensa": "20",
+    "velocidad": "35",
+    "tipo": "Sagrado",
+    "imagen": "BOLA.png"
+}

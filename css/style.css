@@ -724,6 +724,7 @@ li>label{
 
 .fatuiEnter{
     height: 200px;
+    width: 960px;
     border-radius: 20px;
     margin-bottom: 20px;
     display: flex;
@@ -1026,4 +1027,17 @@ span img{
 
 .ck-editor__editable_inline {
     min-height: 200px;
+}
+
+/*---------BOTONES----------*/
+
+.ediBut{
+    background: #b72c2c;
+}
+
+.delBut{
+    background: #b00a0a;
+}
+
+.ddBut{
 }

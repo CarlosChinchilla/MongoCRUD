@@ -256,6 +256,11 @@ class Fatui implements JsonSerializable
                                     <p>Velocidad: </p> <label>".$this->velocidad."</label>
                                 </div>
                             </div>
+                            <div class='botones'>
+  
+                                <button class='button bList ddBut' type='button' value='ddjson'
+                                        onclick='ddFatui(`". $this->id ."`)'>Descargar</button>
+                            </div>
                         </div>";
 
         return $html;
@@ -287,11 +292,14 @@ class Fatui implements JsonSerializable
                             </div>
                             <div class='botones'>
 
-                                <button class='button bList editButton' type='button' value='Editar'
+                                <button class='button bList editButton ediBut' type='button' value='Editar'
                                         onclick='abrirEditar(`". $this->id ."`)'>Editar</button>
 
-                                <button class='button bList' type='button' value='Eliminar'
+                                <button class='button bList delBut' type='button' value='Eliminar'
                                         onclick='borrarFatui(`". $this->id ."`, `". $this->carpeta ."`,`". $this->imagen ."`,`". $idUsu ."`)'>Eliminar</button>
+                                        
+                                <button class='button bList ddBut' type='button' value='ddjson'
+                                        onclick='ddFatui(`". $this->id ."`)'>Descargar</button>
                             </div>
                         </div>";
 
@@ -362,7 +370,8 @@ class Fatui implements JsonSerializable
                 'ataque' => $this->getAtaque(),
                 'defensa' => $this->getDefensa(),
                 'velocidad' => $this->getVelocidad(),
-                'tipo' => $this->getTipo()
+                'tipo' => $this->getTipo(),
+                'imagen' => $this->getImagen()
             ];
     }
 }

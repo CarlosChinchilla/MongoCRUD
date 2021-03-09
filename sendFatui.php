@@ -25,7 +25,7 @@ require 'vendor/autoload.php';
 
 if(isset($_POST) && !empty($_POST)) {
 
-    $i=$_POST['idfatui'];
+    $i = $_POST['idfatui'];
 
     $mail = new PHPMailer();
     $mail->CharSet = 'UTF-8';
@@ -50,13 +50,13 @@ if(isset($_POST) && !empty($_POST)) {
 
     $mail->Subject = "Envío de Fatui";
 
-    $body = $_POST['mensaje'].json_encode($lista->getArrayLista()[$i]);;
+    $body = $_POST['mensaje'].json_encode($lista->getArrayLista()[$i],JSON_PRETTY_PRINT);
 
     $mail->MsgHTML($body);
 
     $fh = fopen("jsonfatui/".$lista->getArrayLista()[$i]->getNombre().".json", 'w')
     or die("Error al abrir fichero de salida");
-    fwrite($fh, json_encode($lista->getArrayLista()[$i],JSON_UNESCAPED_UNICODE));
+    fwrite($fh, json_encode($lista->getArrayLista()[$i],JSON_PRETTY_PRINT));
     fclose($fh);
 
     $mail->AddAttachment($lista->getArrayLista()[$i]->getCarpeta().$lista->getArrayLista()[$i]->getImagen());

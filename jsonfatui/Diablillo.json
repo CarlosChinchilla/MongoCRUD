@@ -1,1 +1,8 @@
-{"nombre":"Diablillo","ataque":"35","defensa":"20","velocidad":"25","tipo":"Profano"}
+{
+    "nombre": "Diablillo",
+    "ataque": "35",
+    "defensa": "20",
+    "velocidad": "25",
+    "tipo": "Profano",
+    "imagen": "DIABLILLO.png"
+}
