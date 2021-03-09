@@ -6,6 +6,10 @@ require "gestor/modelo/funciones.php";
 
 session_start();
 
+if(empty($_SESSION['nombre'])){
+    header("Location: index.php");
+}
+
 $fatui = new Fatui();
 $lista = new ListaFatuis();
 $lista->getListaIdUsu($_SESSION['id']);

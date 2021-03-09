@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c21cefd2-6aae-4856-972f-44cf596941ab" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/jsonfatui/Diablillo.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jsonfatui/Ente Oscuro.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MisFatuis.php" beforeDir="false" afterPath="$PROJECT_DIR$/MisFatuis.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gestor/modelo/Fatui.php" beforeDir="false" afterPath="$PROJECT_DIR$/gestor/modelo/Fatui.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/navUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/navUser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sendFatui.php" beforeDir="false" afterPath="$PROJECT_DIR$/sendFatui.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +55,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -90,6 +97,8 @@
       <workItem from="1614850191300" duration="7408000" />
       <workItem from="1615029173023" duration="26645000" />
       <workItem from="1615204496976" duration="11027000" />
+      <workItem from="1615218027925" duration="680000" />
+      <workItem from="1615287910210" duration="5600000" />
     </task>
     <task id="LOCAL-00001" summary="commit front">
       <created>1613759799371</created>
@@ -189,7 +198,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615215932838</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="ENVIO MENSAJES NP">
+      <created>1615218049844</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1615218049844</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -211,7 +227,8 @@
     <MESSAGE value="ZONA PUBICA Y PRIVADA" />
     <MESSAGE value="FINAL" />
     <MESSAGE value="ENVIO MENSAJES" />
-    <option name="LAST_COMMIT_MESSAGE" value="ENVIO MENSAJES" />
+    <MESSAGE value="ENVIO MENSAJES NP" />
+    <option name="LAST_COMMIT_MESSAGE" value="ENVIO MENSAJES NP" />
   </component>
   <component name="WindowStateProjectService">
     <state x="586" y="198" key="#Inspections" timestamp="1615206987914">
@@ -226,16 +243,16 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="137" y="23" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.738@0.0.1366.738" timestamp="1613754664338" />
-    <state x="686" y="118" key="#com.intellij.ide.util.MemberChooser" timestamp="1615045029649">
+    <state x="686" y="118" key="#com.intellij.ide.util.MemberChooser" timestamp="1615292238115">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="488" y="84" key="#com.intellij.ide.util.MemberChooser/0.0.1366.738@0.0.1366.738" timestamp="1613650964628" />
-    <state x="686" y="118" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1615045029649" />
-    <state x="277" y="0" key="CommitChangelistDialog2" timestamp="1615215931349">
+    <state x="686" y="118" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1615292238115" />
+    <state x="277" y="0" key="CommitChangelistDialog2" timestamp="1615218049252">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="197" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1614426288842" />
-    <state x="277" y="0" key="CommitChangelistDialog2/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1615215931349" />
+    <state x="277" y="0" key="CommitChangelistDialog2/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1615218049252" />
     <state x="736" y="432" width="447" height="266" key="ComposerInitDialogKey" timestamp="1615207177077">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -272,11 +289,11 @@
     </state>
     <state x="184" y="13" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1614258914877" />
     <state x="259" y="18" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1614976160995" />
-    <state x="387" y="142" key="Vcs.Push.Dialog.v2" timestamp="1615215939543">
+    <state x="387" y="142" key="Vcs.Push.Dialog.v2" timestamp="1615218054854">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="275" y="101" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1614425704874" />
-    <state x="387" y="142" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1615215939543" />
+    <state x="387" y="142" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1615218054854" />
     <state x="777" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1614426539649">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

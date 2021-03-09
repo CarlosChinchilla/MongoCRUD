@@ -1,6 +1,6 @@
 <?php
 
-class Fatui
+class Fatui implements JsonSerializable
 {
 
     private $id;
@@ -354,6 +354,17 @@ class Fatui
 
     }
 
+    public function jsonSerialize()
+    {
+        return
+            [
+                'nombre' => $this->getNombre(),
+                'ataque' => $this->getAtaque(),
+                'defensa' => $this->getDefensa(),
+                'velocidad' => $this->getVelocidad(),
+                'tipo' => $this->getTipo()
+            ];
+    }
 }
 
 

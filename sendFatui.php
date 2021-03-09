@@ -1,10 +1,18 @@
 <?php
+require "gestor/modelo/Fatui.php";
+require "gestor/modelo/ListaFatuis.php";
+require_once "gestor/dao/FatuiDAO.php";
+require "gestor/modelo/funciones.php";
 
 session_start();
 
 if(empty($_SESSION['nombre'])){
     header("Location: index.php");
 }
+
+$fatui = new Fatui();
+$lista = new ListaFatuis();
+$lista->getListaIdUsu($_SESSION['id']);
 
 //Import PHPMailer classes into the global namespace
 //These must be at the top of your script, not inside a function
@@ -16,6 +24,8 @@ use PHPMailer\PHPMailer\Exception;
 require 'vendor/autoload.php';
 
 if(isset($_POST) && !empty($_POST)) {
+
+    $i=$_POST['idfatui'];
 
     $mail = new PHPMailer();
     $mail->CharSet = 'UTF-8';
@@ -40,9 +50,17 @@ if(isset($_POST) && !empty($_POST)) {
 
     $mail->Subject = "Envío de Fatui";
 
-    $body = $_POST['mensaje'];
+    $body = $_POST['mensaje'].json_encode($lista->getArrayLista()[$i]);;
 
     $mail->MsgHTML($body);
+
+    $fh = fopen("jsonfatui/".$lista->getArrayLista()[$i]->getNombre().".json", 'w')
+    or die("Error al abrir fichero de salida");
+    fwrite($fh, json_encode($lista->getArrayLista()[$i],JSON_UNESCAPED_UNICODE));
+    fclose($fh);
+
+    $mail->AddAttachment($lista->getArrayLista()[$i]->getCarpeta().$lista->getArrayLista()[$i]->getImagen());
+    $mail->AddAttachment("jsonfatui/".$lista->getArrayLista()[$i]->getNombre().".json");
 
     if($mail->Send()) {
         echo ('<script> alert("Mensaje enviado con éxito");</script>');
@@ -98,15 +116,29 @@ if(isset($_POST) && !empty($_POST)) {
 
             <div id="contenidoSend">
 
-                <h1>Enviar <a class="colorAccent">Email</a></h1>
+                <h1>Enviar <a class="colorAccent">Fatui</a></h1>
 
                 <form id="formularioEnviar" action="<?php echo $_SERVER['PHP_SELF']?>" method="post">
                     <ul>
                         <li><label>Email: </label></li>
                         <li><input class="inputs" type="email" name="mail" placeholder="Email"></li>
+                        <li><label>Fatui: </label></li>
+                        <li>
+                            <select class="inputs" name="idfatui">
+
+                                <?php
+
+                                for($i=0;$i<sizeof($lista->getArrayLista());$i++){
+                                    echo ("<option value='".$i."'>".$lista->getArrayLista()[$i]->getNombre()."</option>");
+                                }
+
+                                ?>
+
+                            </select>
+                        </li>
                         <li><label>Mensaje: </label></li>
                         <li><textarea id="editor" name="mensaje"></textarea></li>
-                        <li><button class="button" type="button" value="EnviarFatui" onclick="validacionEnviar()">Enviar Email</button></li>
+                        <li><button class="button" type="button" value="EnviarFatui" onclick="validacionEnviar()">Enviar Fatui</button></li>
                     </ul>
                 </form>
 
