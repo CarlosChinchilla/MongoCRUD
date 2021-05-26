@@ -14,6 +14,11 @@
 }
 
 @media only screen and (max-width: 960px) {
+    
+    #reg>h1{
+        padding-left: 40px !important;
+        padding-right: 40px !important;
+    }
 
     /*--------HEADER------------*/
 
